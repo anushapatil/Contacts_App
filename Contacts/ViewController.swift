@@ -28,6 +28,13 @@ class ViewController: UIViewController {
     {
         self.topBarStackView.addBorderToTheView();
         self.topBarStackView.backgroundColor = UIColor.redColor();
+        
+//        var array = self.topBarStackView.subviews;
+//        for var i = 0; i < array.count; i++
+//        {
+//            array[i].addBorderToTheView();
+//            
+//        }
     }
 
 
