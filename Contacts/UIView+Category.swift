@@ -6,4 +6,15 @@
 //  Copyright © 2016 Anusha Patil. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIView
+{
+    func addBorderToTheView()->UIView
+    {
+        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor.redColor().CGColor;
+        return self;
+    }
+    
+}

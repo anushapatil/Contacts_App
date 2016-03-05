@@ -14,6 +14,27 @@
 		8890E3031C8AAB8D00A7215A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3011C8AAB8D00A7215A /* LaunchScreen.storyboard */; };
 		8890E30E1C8AAB8E00A7215A /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E30D1C8AAB8E00A7215A /* ContactsTests.swift */; };
 		8890E3191C8AAB8E00A7215A /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E3181C8AAB8E00A7215A /* ContactsUITests.swift */; };
+		8890E3AE1C8ACBEC00A7215A /* add_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E39A1C8ACBEC00A7215A /* add_contact.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3AF1C8ACBEC00A7215A /* another_dial.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E39B1C8ACBEC00A7215A /* another_dial.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3B01C8ACBEC00A7215A /* Contact_call.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8890E39C1C8ACBEC00A7215A /* Contact_call.jpeg */; settings = {ASSET_TAGS = (); }; };
+		8890E3B11C8ACBEC00A7215A /* contact_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E39D1C8ACBEC00A7215A /* contact_person.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3B21C8ACBEC00A7215A /* contact.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8890E39E1C8ACBEC00A7215A /* contact.jpeg */; settings = {ASSET_TAGS = (); }; };
+		8890E3B31C8ACBEC00A7215A /* Edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E39F1C8ACBEC00A7215A /* Edit.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3B41C8ACBEC00A7215A /* groupicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A01C8ACBEC00A7215A /* groupicon.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3B51C8ACBEC00A7215A /* keypad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A11C8ACBEC00A7215A /* keypad.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3B61C8ACBEC00A7215A /* multi_person.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A21C8ACBEC00A7215A /* multi_person.jpeg */; settings = {ASSET_TAGS = (); }; };
+		8890E3B71C8ACBEC00A7215A /* multiperson_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A31C8ACBEC00A7215A /* multiperson_normal.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3B81C8ACBEC00A7215A /* multiperson_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A41C8ACBEC00A7215A /* multiperson_selected.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3B91C8ACBEC00A7215A /* overflow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A51C8ACBEC00A7215A /* overflow.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3BA1C8ACBEC00A7215A /* person.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A61C8ACBEC00A7215A /* person.jpeg */; settings = {ASSET_TAGS = (); }; };
+		8890E3BB1C8ACBEC00A7215A /* phone.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A71C8ACBEC00A7215A /* phone.jpeg */; settings = {ASSET_TAGS = (); }; };
+		8890E3BC1C8ACBEC00A7215A /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A81C8ACBEC00A7215A /* plus.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3BD1C8ACBEC00A7215A /* single_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3A91C8ACBEC00A7215A /* single_normal.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3BE1C8ACBEC00A7215A /* single_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3AA1C8ACBEC00A7215A /* single_selected.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3BF1C8ACBEC00A7215A /* Star_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3AB1C8ACBEC00A7215A /* Star_normal.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3C01C8ACBEC00A7215A /* star_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3AC1C8ACBEC00A7215A /* star_selected.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3C11C8ACBEC00A7215A /* VIP_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8890E3AD1C8ACBEC00A7215A /* VIP_normal.png */; settings = {ASSET_TAGS = (); }; };
+		8890E3C51C8ACE2900A7215A /* UIView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E3C41C8ACE2900A7215A /* UIView+Category.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +68,27 @@
 		8890E3141C8AAB8E00A7215A /* ContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8890E3181C8AAB8E00A7215A /* ContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUITests.swift; sourceTree = "<group>"; };
 		8890E31A1C8AAB8E00A7215A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8890E39A1C8ACBEC00A7215A /* add_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_contact.png; sourceTree = "<group>"; };
+		8890E39B1C8ACBEC00A7215A /* another_dial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = another_dial.png; sourceTree = "<group>"; };
+		8890E39C1C8ACBEC00A7215A /* Contact_call.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Contact_call.jpeg; sourceTree = "<group>"; };
+		8890E39D1C8ACBEC00A7215A /* contact_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_person.png; sourceTree = "<group>"; };
+		8890E39E1C8ACBEC00A7215A /* contact.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = contact.jpeg; sourceTree = "<group>"; };
+		8890E39F1C8ACBEC00A7215A /* Edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit.png; sourceTree = "<group>"; };
+		8890E3A01C8ACBEC00A7215A /* groupicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groupicon.png; sourceTree = "<group>"; };
+		8890E3A11C8ACBEC00A7215A /* keypad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keypad.png; sourceTree = "<group>"; };
+		8890E3A21C8ACBEC00A7215A /* multi_person.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = multi_person.jpeg; sourceTree = "<group>"; };
+		8890E3A31C8ACBEC00A7215A /* multiperson_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multiperson_normal.png; sourceTree = "<group>"; };
+		8890E3A41C8ACBEC00A7215A /* multiperson_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multiperson_selected.png; sourceTree = "<group>"; };
+		8890E3A51C8ACBEC00A7215A /* overflow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overflow.png; sourceTree = "<group>"; };
+		8890E3A61C8ACBEC00A7215A /* person.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = person.jpeg; sourceTree = "<group>"; };
+		8890E3A71C8ACBEC00A7215A /* phone.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = phone.jpeg; sourceTree = "<group>"; };
+		8890E3A81C8ACBEC00A7215A /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		8890E3A91C8ACBEC00A7215A /* single_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = single_normal.png; sourceTree = "<group>"; };
+		8890E3AA1C8ACBEC00A7215A /* single_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = single_selected.png; sourceTree = "<group>"; };
+		8890E3AB1C8ACBEC00A7215A /* Star_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star_normal.png; sourceTree = "<group>"; };
+		8890E3AC1C8ACBEC00A7215A /* star_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_selected.png; sourceTree = "<group>"; };
+		8890E3AD1C8ACBEC00A7215A /* VIP_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VIP_normal.png; sourceTree = "<group>"; };
+		8890E3C41C8ACE2900A7215A /* UIView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Category.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +139,11 @@
 		8890E2F71C8AAB8D00A7215A /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				8890E2F81C8AAB8D00A7215A /* AppDelegate.swift */,
-				8890E2FA1C8AAB8D00A7215A /* ViewController.swift */,
-				8890E2FC1C8AAB8D00A7215A /* Main.storyboard */,
-				8890E2FF1C8AAB8D00A7215A /* Assets.xcassets */,
-				8890E3011C8AAB8D00A7215A /* LaunchScreen.storyboard */,
-				8890E3041C8AAB8D00A7215A /* Info.plist */,
+				8890E3C61C8ACE3500A7215A /* Helper */,
+				8890E3281C8ABD1500A7215A /* View */,
+				8890E3271C8ABCFB00A7215A /* Controller */,
+				8890E3261C8ABCE700A7215A /* App delegate */,
+				8890E32A1C8ABD2E00A7215A /* Supporting files */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -123,6 +164,76 @@
 				8890E31A1C8AAB8E00A7215A /* Info.plist */,
 			);
 			path = ContactsUITests;
+			sourceTree = "<group>";
+		};
+		8890E3261C8ABCE700A7215A /* App delegate */ = {
+			isa = PBXGroup;
+			children = (
+				8890E2F81C8AAB8D00A7215A /* AppDelegate.swift */,
+			);
+			name = "App delegate";
+			sourceTree = "<group>";
+		};
+		8890E3271C8ABCFB00A7215A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8890E2FA1C8AAB8D00A7215A /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8890E3281C8ABD1500A7215A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8890E3011C8AAB8D00A7215A /* LaunchScreen.storyboard */,
+				8890E2FC1C8AAB8D00A7215A /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8890E32A1C8ABD2E00A7215A /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				8890E32B1C8ABD4400A7215A /* Images */,
+				8890E2FF1C8AAB8D00A7215A /* Assets.xcassets */,
+				8890E3041C8AAB8D00A7215A /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		8890E32B1C8ABD4400A7215A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8890E39A1C8ACBEC00A7215A /* add_contact.png */,
+				8890E39B1C8ACBEC00A7215A /* another_dial.png */,
+				8890E39C1C8ACBEC00A7215A /* Contact_call.jpeg */,
+				8890E39D1C8ACBEC00A7215A /* contact_person.png */,
+				8890E39E1C8ACBEC00A7215A /* contact.jpeg */,
+				8890E39F1C8ACBEC00A7215A /* Edit.png */,
+				8890E3A01C8ACBEC00A7215A /* groupicon.png */,
+				8890E3A11C8ACBEC00A7215A /* keypad.png */,
+				8890E3A21C8ACBEC00A7215A /* multi_person.jpeg */,
+				8890E3A31C8ACBEC00A7215A /* multiperson_normal.png */,
+				8890E3A41C8ACBEC00A7215A /* multiperson_selected.png */,
+				8890E3A51C8ACBEC00A7215A /* overflow.png */,
+				8890E3A61C8ACBEC00A7215A /* person.jpeg */,
+				8890E3A71C8ACBEC00A7215A /* phone.jpeg */,
+				8890E3A81C8ACBEC00A7215A /* plus.png */,
+				8890E3A91C8ACBEC00A7215A /* single_normal.png */,
+				8890E3AA1C8ACBEC00A7215A /* single_selected.png */,
+				8890E3AB1C8ACBEC00A7215A /* Star_normal.png */,
+				8890E3AC1C8ACBEC00A7215A /* star_selected.png */,
+				8890E3AD1C8ACBEC00A7215A /* VIP_normal.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		8890E3C61C8ACE3500A7215A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8890E3C41C8ACE2900A7215A /* UIView+Category.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +339,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8890E3B51C8ACBEC00A7215A /* keypad.png in Resources */,
+				8890E3BD1C8ACBEC00A7215A /* single_normal.png in Resources */,
+				8890E3C01C8ACBEC00A7215A /* star_selected.png in Resources */,
+				8890E3B41C8ACBEC00A7215A /* groupicon.png in Resources */,
+				8890E3B31C8ACBEC00A7215A /* Edit.png in Resources */,
+				8890E3AF1C8ACBEC00A7215A /* another_dial.png in Resources */,
+				8890E3BF1C8ACBEC00A7215A /* Star_normal.png in Resources */,
 				8890E3031C8AAB8D00A7215A /* LaunchScreen.storyboard in Resources */,
+				8890E3B71C8ACBEC00A7215A /* multiperson_normal.png in Resources */,
+				8890E3C11C8ACBEC00A7215A /* VIP_normal.png in Resources */,
+				8890E3BA1C8ACBEC00A7215A /* person.jpeg in Resources */,
 				8890E3001C8AAB8D00A7215A /* Assets.xcassets in Resources */,
+				8890E3AE1C8ACBEC00A7215A /* add_contact.png in Resources */,
+				8890E3B21C8ACBEC00A7215A /* contact.jpeg in Resources */,
+				8890E3B01C8ACBEC00A7215A /* Contact_call.jpeg in Resources */,
+				8890E3BC1C8ACBEC00A7215A /* plus.png in Resources */,
 				8890E2FE1C8AAB8D00A7215A /* Main.storyboard in Resources */,
+				8890E3B81C8ACBEC00A7215A /* multiperson_selected.png in Resources */,
+				8890E3B61C8ACBEC00A7215A /* multi_person.jpeg in Resources */,
+				8890E3BE1C8ACBEC00A7215A /* single_selected.png in Resources */,
+				8890E3BB1C8ACBEC00A7215A /* phone.jpeg in Resources */,
+				8890E3B11C8ACBEC00A7215A /* contact_person.png in Resources */,
+				8890E3B91C8ACBEC00A7215A /* overflow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +388,7 @@
 			files = (
 				8890E2FB1C8AAB8D00A7215A /* ViewController.swift in Sources */,
 				8890E2F91C8AAB8D00A7215A /* AppDelegate.swift in Sources */,
+				8890E3C51C8ACE2900A7215A /* UIView+Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Contacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hurix.Contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,6 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Contacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hurix.Contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
