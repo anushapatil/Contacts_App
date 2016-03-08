@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88493A331C8D69FC0015F3D1 /* dropdown_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 88493A321C8D69FC0015F3D1 /* dropdown_arrow.png */; settings = {ASSET_TAGS = (); }; };
+		88493A391C8DA8D30015F3D1 /* UIFont+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88493A381C8DA8D30015F3D1 /* UIFont+Category.swift */; settings = {ASSET_TAGS = (); }; };
+		88493A3C1C8DAF090015F3D1 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 88493A3A1C8DAF090015F3D1 /* person.png */; settings = {ASSET_TAGS = (); }; };
+		88493A3D1C8DAF090015F3D1 /* call_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 88493A3B1C8DAF090015F3D1 /* call_person.png */; settings = {ASSET_TAGS = (); }; };
 		8890E2F91C8AAB8D00A7215A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E2F81C8AAB8D00A7215A /* AppDelegate.swift */; };
 		8890E2FB1C8AAB8D00A7215A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E2FA1C8AAB8D00A7215A /* ViewController.swift */; };
 		8890E2FE1C8AAB8D00A7215A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8890E2FC1C8AAB8D00A7215A /* Main.storyboard */; };
@@ -55,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88493A321C8D69FC0015F3D1 /* dropdown_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropdown_arrow.png; sourceTree = "<group>"; };
+		88493A381C8DA8D30015F3D1 /* UIFont+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Category.swift"; sourceTree = "<group>"; };
+		88493A3A1C8DAF090015F3D1 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
+		88493A3B1C8DAF090015F3D1 /* call_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_person.png; sourceTree = "<group>"; };
 		8890E2F51C8AAB8D00A7215A /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8890E2F81C8AAB8D00A7215A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8890E2FA1C8AAB8D00A7215A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +212,9 @@
 		8890E32B1C8ABD4400A7215A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				88493A3A1C8DAF090015F3D1 /* person.png */,
+				88493A3B1C8DAF090015F3D1 /* call_person.png */,
+				88493A321C8D69FC0015F3D1 /* dropdown_arrow.png */,
 				8890E39A1C8ACBEC00A7215A /* add_contact.png */,
 				8890E39B1C8ACBEC00A7215A /* another_dial.png */,
 				8890E39C1C8ACBEC00A7215A /* Contact_call.jpeg */,
@@ -232,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				8890E3C41C8ACE2900A7215A /* UIView+Category.swift */,
+				88493A381C8DA8D30015F3D1 /* UIFont+Category.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -341,8 +353,11 @@
 			files = (
 				8890E3B51C8ACBEC00A7215A /* keypad.png in Resources */,
 				8890E3BD1C8ACBEC00A7215A /* single_normal.png in Resources */,
+				88493A3D1C8DAF090015F3D1 /* call_person.png in Resources */,
 				8890E3C01C8ACBEC00A7215A /* star_selected.png in Resources */,
 				8890E3B41C8ACBEC00A7215A /* groupicon.png in Resources */,
+				88493A3C1C8DAF090015F3D1 /* person.png in Resources */,
+				88493A331C8D69FC0015F3D1 /* dropdown_arrow.png in Resources */,
 				8890E3B31C8ACBEC00A7215A /* Edit.png in Resources */,
 				8890E3AF1C8ACBEC00A7215A /* another_dial.png in Resources */,
 				8890E3BF1C8ACBEC00A7215A /* Star_normal.png in Resources */,
@@ -388,6 +403,7 @@
 			files = (
 				8890E2FB1C8AAB8D00A7215A /* ViewController.swift in Sources */,
 				8890E2F91C8AAB8D00A7215A /* AppDelegate.swift in Sources */,
+				88493A391C8DA8D30015F3D1 /* UIFont+Category.swift in Sources */,
 				8890E3C51C8ACE2900A7215A /* UIView+Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,6 +633,7 @@
 				8890E31F1C8AAB8E00A7215A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8890E3201C8AAB8E00A7215A /* Build configuration list for PBXNativeTarget "ContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -625,6 +642,7 @@
 				8890E3221C8AAB8E00A7215A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8890E3231C8AAB8E00A7215A /* Build configuration list for PBXNativeTarget "ContactsUITests" */ = {
 			isa = XCConfigurationList;
@@ -633,6 +651,7 @@
 				8890E3251C8AAB8E00A7215A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
