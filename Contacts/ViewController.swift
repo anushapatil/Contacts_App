@@ -10,25 +10,27 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 {
-    //Images view
+    //MARK: Images view outlets
     @IBOutlet weak var dropdownImageView: UIImageView!
     
-    //Table view
+    //Table view outlets
     @IBOutlet weak var contactsTableView: UITableView!
     
-    //Search bar
+    //MARK: Search bar outlets
     @IBOutlet weak var searchContactButton: UISearchBar!
     
-    //Buttons
+    //MARK: Buttons outlets
     @IBOutlet weak var contactsToDisplayButton: UIButton!
     @IBOutlet weak var overFlowIcon: UIButton!
     @IBOutlet weak var phoneKeyPadButton: UIButton!
     @IBOutlet weak var groupContactsButton: UIButton!
     @IBOutlet weak var contactsButton: UIButton!
     
-    //Variables
+    //MARK: Global Variables
     var alphabeticContacts = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
     var array = [];
+    let value:CGFloat = 50;
+    let value1:CGFloat = 80;
     
     override func viewDidLoad()
     {
@@ -44,7 +46,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
     
-    //Custom Methods
+    //MARK: Custom Methods
     
     func intialization()
     {
@@ -53,6 +55,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //self.contactsToDisplayButton.addBorderToTheView();
         
         formAlphabeticCharacters();
+        
+        createAddContactButton();
     }
     
     func formAlphabeticCharacters()
@@ -60,7 +64,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         array = alphabeticContacts.componentsSeparatedByString(" ");
     }
 
-    //Action Methods
+    func createAddContactButton()
+    {
+        let addContactsButton = UIButton();
+        addContactsButton.frame = CGRectMake(CGRectGetMaxX(self.view.frame)-value1, CGRectGetMaxY(self.view.frame)-value1, value, value);
+        addContactsButton.setImage(UIImage(named: "plus.png"), forState:UIControlState.Normal);
+        //addContactsButton.backgroundColor = UIColor(hexString: "#25B7B7");
+        addContactsButton.layer.borderColor = UIColor.redColor().CGColor;
+        addContactsButton.layer.borderWidth = 1.0;
+        addContactsButton.backgroundColor = UIColor.whiteColor();
+        addContactsButton.layer.cornerRadius = addContactsButton.frame.size.width/2;
+        addContactsButton.addTarget(self , action: "didClickOnAddContactsButton", forControlEvents: UIControlEvents.TouchUpInside);
+        addContactsButton.translatesAutoresizingMaskIntoConstraints = true;
+        self.view.addSubview(addContactsButton);
+        self.view.bringSubviewToFront(addContactsButton);
+    }
+    
+    //MARK: Action Methods
     
     @IBAction func didClickOnGroupContactsButton(sender: AnyObject)
     {
@@ -87,7 +107,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
-    //Table view delegate and datasource methods
+    func didClickOnAddContactsButton()
+    {
+        self.performSegueWithIdentifier("push", sender: self);
+    }
+    
+    //MARK: Perform segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "push"
+        {
+            
+        }
+    }
+    
+    //MARK: Table view delegate and datasource methods
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
