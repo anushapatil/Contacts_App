@@ -31,6 +31,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var array = [];
     let value:CGFloat = 50;
     let value1:CGFloat = 80;
+    var storedContacts = []
     
     override func viewDidLoad()
     {
@@ -54,9 +55,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.view.bringSubviewToFront(contactsToDisplayButton);
         //self.contactsToDisplayButton.addBorderToTheView();
         
+        fetchStoredContactsDetails();
         formAlphabeticCharacters();
-        
         createAddContactButton();
+    }
+    
+    
+    func fetchStoredContactsDetails()
+    {
+        let dataBaseHandler = DataBaseHandler.sharedInstance;
+        dataBaseHandler.fetchData();
+        storedContacts = dataBaseHandler.storedContacts;
     }
     
     func formAlphabeticCharacters()
@@ -134,7 +143,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         {
             return 1;
         }
-        return 3;
+        return storedContacts.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -144,8 +153,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         {
             //cell.textLabel?.text = "SET UP MY PROFILE";
         }
+//        storedContacts.indexOf(indexPath.row);
+        cell.textLabel?.text = "222";
         cell.imageView?.image = UIImage (named: "person.png");
-        cell.textLabel!.text = "222";
         return cell;
     }
     

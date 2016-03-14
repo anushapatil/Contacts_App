@@ -11,6 +11,7 @@ import CoreData
 
 class DataBaseHandler: NSObject
 {
+    var storedContacts = []
     //MARK: Singleton class
     class var sharedInstance: DataBaseHandler
     {
@@ -76,8 +77,10 @@ class DataBaseHandler: NSObject
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
-        if managedObjectContext.hasChanges {
+    func saveContext ()
+    {
+        if managedObjectContext.hasChanges
+        {
             do {
                 try managedObjectContext.save()
             } catch {
@@ -87,6 +90,30 @@ class DataBaseHandler: NSObject
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
                 abort()
             }
+        }
+    }
+    
+    //MARK: Core data fetch data support
+    
+    func fetchData ()
+    {
+        let fetchRequest = NSFetchRequest();
+        let entityDescription = NSEntityDescription.entityForName("Contacts", inManagedObjectContext: self.managedObjectContext);
+        
+        let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.returnsObjectsAsFaults = false;
+        fetchRequest.entity = entityDescription;
+        do
+        {
+            let result = try self.managedObjectContext.executeFetchRequest(fetchRequest);
+            storedContacts = result;
+            print(result);
+        }
+        catch
+        {
+            let fetchError = error as NSError
+            print(fetchError);
         }
     }
     

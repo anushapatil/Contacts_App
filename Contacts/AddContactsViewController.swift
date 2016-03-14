@@ -76,10 +76,18 @@ class AddContactsViewController: UIViewController
     
     @IBAction func didClickOnDoneButton(sender: AnyObject)
     {
-        let addContactsModel:AddContactsModel = prepareContactsModel();
+        if firstNameTextField.text != ""
+        {
+            let addContactsModel:AddContactsModel = prepareContactsModel();
+            let dataBaseHandle = DataBaseHandler.sharedInstance;
+            dataBaseHandle.savingContactsWithDetails(addContactsModel);
+
+        }
+        //dismiss view controller
         
-        let dataBaseHandle:DataBaseHandler = DataBaseHandler.sharedInstance;
-        dataBaseHandle.savingContactsWithDetails(addContactsModel);
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            NSLog("completed animation");
+        }
     }
     
     //MARK: Custom methods
