@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol AddContactsViewControllerDelegate
+{
+    func reloadTableAfterAddingContacts()
+}
+
 class AddContactsViewController: UIViewController
 {
     // MARK: Outlet deaclaration
@@ -31,6 +36,8 @@ class AddContactsViewController: UIViewController
     @IBOutlet weak var emailSideButton: UIButton!
     @IBOutlet weak var addressSideButton: UIButton!
     @IBOutlet weak var specialDatesSideButton: UIButton!
+    
+    var delegate: AddContactsViewControllerDelegate!
     
     override func viewDidLoad()
     {
@@ -83,6 +90,10 @@ class AddContactsViewController: UIViewController
             dataBaseHandle.savingContactsWithDetails(addContactsModel);
 
         }
+        
+        //Call delegate method
+        delegate.reloadTableAfterAddingContacts();
+        
         //dismiss view controller
         
         self.dismissViewControllerAnimated(true) { () -> Void in

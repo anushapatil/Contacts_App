@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, AddContactsViewControllerDelegate
 {
     //MARK: Images view outlets
     @IBOutlet weak var dropdownImageView: UIImageView!
@@ -27,11 +27,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var contactsButton: UIButton!
     
     //MARK: Global Variables
-    var alphabeticContacts = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
-    var array = [];
+//    var alphabeticContacts = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
+    var alphabeticSortingDict:NSMutableDictionary = NSMutableDictionary();
+    var alphabeticArray:NSMutableArray = NSMutableArray();
     let value:CGFloat = 50;
     let value1:CGFloat = 80;
     var storedContacts = []
+    var displayingContacts:NSMutableArray = NSMutableArray();
     
     override func viewDidLoad()
     {
@@ -70,7 +72,24 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func formAlphabeticCharacters()
     {
-        array = alphabeticContacts.componentsSeparatedByString(" ");
+        for value in storedContacts
+        {
+            let innerArray:NSMutableArray = NSMutableArray();
+            let contacts = value as! Contacts;
+            let char = contacts.firstName?.characters.first;
+            let array = alphabeticSortingDict.valueForKey(String(char));
+            
+            if array?.count != 0 && array != nil
+            {
+                innerArray.addObjectsFromArray(array as! [AnyObject]);
+            }
+            else
+            {
+                alphabeticArray.addObject(String(char));
+            }
+            innerArray.addObject(value);
+            alphabeticSortingDict.setValue(innerArray, forKey: String(char));
+        }
     }
 
     func createAddContactButton()
@@ -126,7 +145,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "push"
         {
-            
+            let addContactsVC = segue.destinationViewController as! AddContactsViewController;
+            addContactsVC.delegate = self;
         }
     }
     
@@ -134,7 +154,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 26;
+        return alphabeticSortingDict.count+1;
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -143,18 +163,29 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         {
             return 1;
         }
-        return storedContacts.count;
+        
+        let string = alphabeticArray.objectAtIndex(section-1);
+        //Get the section elements
+        displayingContacts = alphabeticSortingDict.valueForKey(string as! String) as! NSMutableArray
+        return displayingContacts.count;
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell:UITableViewCell = self.contactsTableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath);
-        if indexPath.row == 1
+        if indexPath.row == 0 && indexPath.section == 0
         {
-            //cell.textLabel?.text = "SET UP MY PROFILE";
+            cell.textLabel?.text = "SET UP MY PROFILE";
+            
+            return cell;
         }
-//        storedContacts.indexOf(indexPath.row);
-        cell.textLabel?.text = "222";
+        
+        let string = alphabeticArray.objectAtIndex(indexPath.section-1);
+        //Get the section elements
+        displayingContacts = alphabeticSortingDict.valueForKey(string as! String) as! NSMutableArray
+        let contacts =  displayingContacts[indexPath.row] as! Contacts;
+        cell.textLabel?.text = contacts.firstName;
+        cell.detailTextLabel?.text = contacts.surname;
         cell.imageView?.image = UIImage (named: "person.png");
         return cell;
     }
@@ -171,7 +202,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         else
         {
-            text = (array.objectAtIndex(section-1) as? String)!;
+            let string:String = alphabeticArray.objectAtIndex(section-1) as! String;
+            let stringArray = string.componentsSeparatedByString("\"");
+            text = stringArray[1];
         }
         
         label.text = text;
@@ -187,6 +220,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         v.backgroundColor = UIColor.clearColor();
         return v;
+    }
+    
+    //MARK: Custom delegate methods
+    
+    func reloadTableAfterAddingContacts()
+    {
+        fetchStoredContactsDetails();
+        formAlphabeticCharacters();
+        contactsTableView.reloadData();
     }
     
 }
