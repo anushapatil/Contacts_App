@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8800D4CE1C9B0C460081A777 /* AllCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8800D4CF1C9B0C460081A777 /* AllCallsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8800D4CD1C9B0C460081A777 /* AllCallsCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8800D4D11C9B17C70081A777 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800D4D01C9B17C70081A777 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E0D61C93E08500697957 /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0D51C93E08500697957 /* UIColor+Category.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E0D81C93E65200697957 /* AddContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0D71C93E65200697957 /* AddContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E0DD1C9434BB00697957 /* DataBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */; settings = {ASSET_TAGS = (); }; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCallsCell.swift; sourceTree = "<group>"; };
 		8800D4CD1C9B0C460081A777 /* AllCallsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllCallsCell.xib; sourceTree = "<group>"; };
+		8800D4D01C9B17C70081A777 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8817E0D51C93E08500697957 /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
 		8817E0D71C93E65200697957 /* AddContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsViewController.swift; sourceTree = "<group>"; };
 		8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseHandler.swift; sourceTree = "<group>"; };
@@ -156,6 +158,10 @@
 			isa = PBXGroup;
 			children = (
 				8817E0DE1C9434D500697957 /* AddContactsModel.swift */,
+				8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */,
+				88D6DFD01C991E650075EB08 /* CustomSubView.swift */,
+				8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */,
+				8849D8E91C9A808500086B1C /* ContactsCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -266,10 +272,6 @@
 			children = (
 				8890E2FA1C8AAB8D00A7215A /* ViewController.swift */,
 				8817E0D71C93E65200697957 /* AddContactsViewController.swift */,
-				8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */,
-				88D6DFD01C991E650075EB08 /* CustomSubView.swift */,
-				8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */,
-				8849D8E91C9A808500086B1C /* ContactsCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -310,6 +312,7 @@
 		88D6DFD61C99271B0075EB08 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				8800D4D01C9B17C70081A777 /* Constants.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				8890E2F91C8AAB8D00A7215A /* AppDelegate.swift in Sources */,
 				8800D4CE1C9B0C460081A777 /* AllCallsCell.swift in Sources */,
 				8817E0D81C93E65200697957 /* AddContactsViewController.swift in Sources */,
+				8800D4D11C9B17C70081A777 /* Constants.swift in Sources */,
 				8849D8EB1C9A808500086B1C /* ContactsCell.swift in Sources */,
 				88493A391C8DA8D30015F3D1 /* UIFont+Category.swift in Sources */,
 				88D6DFD11C991E650075EB08 /* CustomSubView.swift in Sources */,

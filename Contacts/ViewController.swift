@@ -102,7 +102,7 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     
     func setCustomSubViewProperties()
     {
-        let nibView = self.view.loadFromNibNamed("CustomSubView")! as! CustomSubView
+        let nibView = self.view.loadFromNibNamed(Constants.ControllerConstants.customViewNibName)! as! CustomSubView
         nibView.alphabeticArray = self.alphabeticArray
         nibView.alphabeticSortingDict = self.alphabeticSortingDict
         customSubView = nibView
@@ -164,13 +164,13 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     
     func didClickOnAddContactsButton()
     {
-        self.performSegueWithIdentifier("push", sender: self);
+        self.performSegueWithIdentifier(Constants.ControllerConstants.identifier, sender: self);
     }
     
     //MARK: Perform segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "push"
+        if segue.identifier == Constants.ControllerConstants.identifier
         {
             let addContactsVC = segue.destinationViewController as! AddContactsViewController;
             addContactsVC.delegate = self;
