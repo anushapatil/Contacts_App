@@ -8,32 +8,22 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, AddContactsViewControllerDelegate
+class ViewController: UIViewController, AddContactsViewControllerDelegate, CustomSubViewDelegate, UIScrollViewDelegate
 {
-    //MARK: Images view outlets
-    @IBOutlet weak var dropdownImageView: UIImageView!
-    
-    //Table view outlets
-    @IBOutlet weak var contactsTableView: UITableView!
-    
-    //MARK: Search bar outlets
-    @IBOutlet weak var searchContactButton: UISearchBar!
-    
-    //MARK: Buttons outlets
-    @IBOutlet weak var contactsToDisplayButton: UIButton!
-    @IBOutlet weak var overFlowIcon: UIButton!
     @IBOutlet weak var phoneKeyPadButton: UIButton!
     @IBOutlet weak var groupContactsButton: UIButton!
     @IBOutlet weak var contactsButton: UIButton!
+    @IBOutlet weak var saperatorLabel: UILabel!
     
+    @IBOutlet weak var bottomBarView: UIView!
+    @IBOutlet weak var holderScrollView: UIScrollView!
     //MARK: Global Variables
-//    var alphabeticContacts = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z";
     var alphabeticSortingDict:NSMutableDictionary = NSMutableDictionary();
     var alphabeticArray:NSMutableArray = NSMutableArray();
     let value:CGFloat = 50;
     let value1:CGFloat = 80;
     var storedContacts = []
-    var displayingContacts:NSMutableArray = NSMutableArray();
+    var customSubView:CustomSubView!;
     
     override func viewDidLoad()
     {
@@ -43,19 +33,34 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         intialization();
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        
+        setCustomSubViewProperties();
+        setScrollViewOffset(CGRectGetMaxX(self.holderScrollView.frame));
+    }
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func awakeFromNib()
+    {
+        
+    }
+    
     //MARK: Custom Methods
     
     func intialization()
     {
-        self.view.sendSubviewToBack(dropdownImageView);
-        self.view.bringSubviewToFront(contactsToDisplayButton);
-        //self.contactsToDisplayButton.addBorderToTheView();
+        contactsButton.selected = true;
+        bottomBarView.hidden = true;
         
         fetchStoredContactsDetails();
         formAlphabeticCharacters();
@@ -72,6 +77,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func formAlphabeticCharacters()
     {
+        alphabeticSortingDict.removeAllObjects();
+        alphabeticArray.removeAllObjects();
+        
         for value in storedContacts
         {
             let innerArray:NSMutableArray = NSMutableArray();
@@ -91,48 +99,67 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             alphabeticSortingDict.setValue(innerArray, forKey: String(char));
         }
     }
-
+    
+    func setCustomSubViewProperties()
+    {
+        let nibView = self.view.loadFromNibNamed("CustomSubView")! as! CustomSubView
+        nibView.alphabeticArray = self.alphabeticArray
+        nibView.alphabeticSortingDict = self.alphabeticSortingDict
+        customSubView = nibView
+        customSubView.alphabeticArray = alphabeticArray;
+        customSubView.alphabeticSortingDict = alphabeticSortingDict;
+        
+        customSubView.frame = CGRectMake(CGRectGetMinX(self.holderScrollView.bounds), CGRectGetMinY(self.holderScrollView.bounds), CGRectGetWidth(self.holderScrollView.frame)*3, CGRectGetHeight(self.holderScrollView.frame));
+        
+        customSubView.translatesAutoresizingMaskIntoConstraints = true;
+        
+        self.holderScrollView.contentSize = CGSizeMake(CGRectGetWidth(holderScrollView.frame)*3, CGRectGetHeight(holderScrollView.frame));
+        
+        self.holderScrollView.addSubview(customSubView);
+    }
+    
     func createAddContactButton()
     {
         let addContactsButton = UIButton();
         addContactsButton.frame = CGRectMake(CGRectGetMaxX(self.view.frame)-value1, CGRectGetMaxY(self.view.frame)-value1, value, value);
-        addContactsButton.setImage(UIImage(named: "plus.png"), forState:UIControlState.Normal);
-        //addContactsButton.backgroundColor = UIColor(hexString: "#25B7B7");
-        addContactsButton.layer.borderColor = UIColor.redColor().CGColor;
-        addContactsButton.layer.borderWidth = 1.0;
-        addContactsButton.backgroundColor = UIColor.whiteColor();
-        addContactsButton.layer.cornerRadius = addContactsButton.frame.size.width/2;
+        addContactsButton.setButtonProperties();
         addContactsButton.addTarget(self , action: "didClickOnAddContactsButton", forControlEvents: UIControlEvents.TouchUpInside);
-        addContactsButton.translatesAutoresizingMaskIntoConstraints = true;
         self.view.addSubview(addContactsButton);
         self.view.bringSubviewToFront(addContactsButton);
     }
     
+    func setScrollViewOffset(value: CGFloat)
+    {
+        self.holderScrollView.contentOffset = CGPointMake(value, CGRectGetMinY(self.holderScrollView.bounds));
+    }
+    
     //MARK: Action Methods
     
-    @IBAction func didClickOnGroupContactsButton(sender: AnyObject)
+    @IBAction func didClickOnPhoneKeypadButton(sender: AnyObject)
     {
-        
+        setScrollViewOffset(CGRectGetMinX(self.holderScrollView.frame));
+        bottomBarView.hidden = false;
+        self.phoneKeyPadButton.selected = true;
+        self.contactsButton.selected = false;
+        self.groupContactsButton.selected = false;
     }
     
     @IBAction func didClickOnContactsButton(sender: AnyObject)
     {
-        
+        setScrollViewOffset(CGRectGetMaxX(self.holderScrollView.frame));
+        bottomBarView.hidden = true;
+        self.phoneKeyPadButton.selected = false;
+        self.contactsButton.selected = true;
+        self.groupContactsButton.selected = false;
     }
     
-    @IBAction func didClickOnPhoneKeypadButton(sender: AnyObject)
+    @IBAction func didClickOnGroupContactsButton(sender: AnyObject)
     {
-        
-    }
-    
-    @IBAction func didClickOnOverFlowButton(sender: AnyObject)
-    {
-        
-    }
-    
-    @IBAction func didClickOnDisplayContactsButton(sender: AnyObject)
-    {
-        
+        setScrollViewOffset(CGRectGetMaxX(self.holderScrollView.frame)*2);
+        bottomBarView.hidden = true;
+        self.phoneKeyPadButton.selected = false;
+        self.contactsButton.selected = false;
+        self.groupContactsButton.selected = true;
     }
     
     func didClickOnAddContactsButton()
@@ -150,86 +177,40 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
     }
     
-    //MARK: Table view delegate and datasource methods
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int
-    {
-        return alphabeticSortingDict.count+1;
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        if section == 0
-        {
-            return 1;
-        }
-        
-        let string = alphabeticArray.objectAtIndex(section-1);
-        //Get the section elements
-        displayingContacts = alphabeticSortingDict.valueForKey(string as! String) as! NSMutableArray
-        return displayingContacts.count;
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        let cell:UITableViewCell = self.contactsTableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath);
-        if indexPath.row == 0 && indexPath.section == 0
-        {
-            cell.textLabel?.text = "SET UP MY PROFILE";
-            
-            return cell;
-        }
-        
-        let string = alphabeticArray.objectAtIndex(indexPath.section-1);
-        //Get the section elements
-        displayingContacts = alphabeticSortingDict.valueForKey(string as! String) as! NSMutableArray
-        let contacts =  displayingContacts[indexPath.row] as! Contacts;
-        cell.textLabel?.text = contacts.firstName;
-        cell.detailTextLabel?.text = contacts.surname;
-        cell.imageView?.image = UIImage (named: "person.png");
-        return cell;
-    }
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
-    {
-        let v = UIView();
-        let label = UILabel();
-        var text = "";
-        
-        if section == 0
-        {
-            text = "ME";
-        }
-        else
-        {
-            let string:String = alphabeticArray.objectAtIndex(section-1) as! String;
-            let stringArray = string.componentsSeparatedByString("\"");
-            text = stringArray[1];
-        }
-        
-        label.text = text;
-        let size = label.font.sizeOfString(text, containedWidth: 20.0);
-        label.frame = CGRectMake(CGRectGetMinX(v.frame), CGRectGetMinY(v.frame), size.width, size.height);
-        label.backgroundColor = UIColor.clearColor();
-        v.addSubview(label);
-        
-        let label1 = UILabel();
-        label1.backgroundColor = UIColor.blackColor();
-        label1.frame = CGRectMake(CGRectGetWidth(label.frame), CGRectGetHeight(label.frame)-2.0, CGRectGetWidth(tableView.frame)-CGRectGetWidth(label.frame), 0.5);
-        v.addSubview(label1);
-        
-        v.backgroundColor = UIColor.clearColor();
-        return v;
-    }
-    
     //MARK: Custom delegate methods
     
     func reloadTableAfterAddingContacts()
     {
         fetchStoredContactsDetails();
         formAlphabeticCharacters();
-        contactsTableView.reloadData();
     }
     
+    //MARK ScrollView Delegate methods
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView)
+    {
+        let point: CGPoint = scrollView.contentOffset;
+        if point.x == 0
+        {
+            self.phoneKeyPadButton.selected = true;
+            self.contactsButton.selected = false;
+            self.groupContactsButton.selected = false;
+            bottomBarView.hidden = false;
+        }
+        else if point.x == CGRectGetWidth(self.holderScrollView.frame)
+        {
+            self.phoneKeyPadButton.selected = false;
+            self.contactsButton.selected = true;
+            self.groupContactsButton.selected = false;
+            bottomBarView.hidden = true;
+        }
+        else if point.x == (CGRectGetWidth(self.holderScrollView.frame)*2)
+        {
+            self.phoneKeyPadButton.selected = false;
+            self.contactsButton.selected = false;
+            self.groupContactsButton.selected = true;
+            bottomBarView.hidden = true;
+        }
+    }
 }
 

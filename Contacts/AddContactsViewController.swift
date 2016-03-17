@@ -125,4 +125,60 @@ class AddContactsViewController: UIViewController
     
         return addContactsModel;
     }
+    //MARK TextFiled delegate methods
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
+    {
+        return true;
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+        var value = true;
+        
+        if textField == emailTextField
+        {
+            value = isValidEmail(textField.text!);
+        }
+        else if textField == phoneTextField
+        {
+            value = validate(textField.text!)
+        }
+        
+        if !value && textField.text != ""
+        {
+            let alertController = UIAlertController(title: "Error", message: "Please enter valid data!!!", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "Ok", style: .Default, handler: { (ACTION) -> Void in
+                
+            });
+            
+            alertController.addAction(okAction);
+            self.presentViewController(alertController, animated: true, completion: { () -> Void in
+                textField.text = "";
+            });
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder();
+        return true;
+    }
+    
+    //MARK: Validate Phone number and Email ID
+    
+    func isValidEmail(testStr:String) -> Bool
+    {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluateWithObject(testStr)
+        return result
+    }
+    
+    func validate(value: String) -> Bool
+    {
+        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result =  phoneTest.evaluateWithObject(value)
+        return result
+    }
 }

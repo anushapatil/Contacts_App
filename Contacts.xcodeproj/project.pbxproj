@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8800D4CE1C9B0C460081A777 /* AllCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8800D4CF1C9B0C460081A777 /* AllCallsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8800D4CD1C9B0C460081A777 /* AllCallsCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8817E0D61C93E08500697957 /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0D51C93E08500697957 /* UIColor+Category.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E0D81C93E65200697957 /* AddContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0D71C93E65200697957 /* AddContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E0DD1C9434BB00697957 /* DataBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E0DF1C9434D500697957 /* AddContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0DE1C9434D500697957 /* AddContactsModel.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E1201C94416C00697957 /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8817E11E1C94416C00697957 /* Contacts.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		8817E1231C9448E900697957 /* Contacts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E1211C9448E900697957 /* Contacts+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		8817E1241C9448E900697957 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E1221C9448E900697957 /* Contacts.swift */; settings = {ASSET_TAGS = (); }; };
 		8823FD4D1C8ED09400659C42 /* add_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 8823FD361C8ED09400659C42 /* add_contact.png */; settings = {ASSET_TAGS = (); }; };
 		8823FD4E1C8ED09400659C42 /* another_dial.png in Resources */ = {isa = PBXBuildFile; fileRef = 8823FD371C8ED09400659C42 /* another_dial.png */; settings = {ASSET_TAGS = (); }; };
 		8823FD4F1C8ED09400659C42 /* call_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 8823FD381C8ED09400659C42 /* call_person.png */; settings = {ASSET_TAGS = (); }; };
@@ -38,6 +39,8 @@
 		8823FD621C8ED09400659C42 /* star_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8823FD4B1C8ED09400659C42 /* star_selected.png */; settings = {ASSET_TAGS = (); }; };
 		8823FD631C8ED09400659C42 /* VIP_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8823FD4C1C8ED09400659C42 /* VIP_normal.png */; settings = {ASSET_TAGS = (); }; };
 		88493A391C8DA8D30015F3D1 /* UIFont+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88493A381C8DA8D30015F3D1 /* UIFont+Category.swift */; settings = {ASSET_TAGS = (); }; };
+		8849D8EB1C9A808500086B1C /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8849D8E91C9A808500086B1C /* ContactsCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8849D8EC1C9A808500086B1C /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8849D8EA1C9A808500086B1C /* ContactsCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8890E2F91C8AAB8D00A7215A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E2F81C8AAB8D00A7215A /* AppDelegate.swift */; };
 		8890E2FB1C8AAB8D00A7215A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E2FA1C8AAB8D00A7215A /* ViewController.swift */; };
 		8890E2FE1C8AAB8D00A7215A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8890E2FC1C8AAB8D00A7215A /* Main.storyboard */; };
@@ -46,6 +49,10 @@
 		8890E30E1C8AAB8E00A7215A /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E30D1C8AAB8E00A7215A /* ContactsTests.swift */; };
 		8890E3191C8AAB8E00A7215A /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E3181C8AAB8E00A7215A /* ContactsUITests.swift */; };
 		8890E3C51C8ACE2900A7215A /* UIView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E3C41C8ACE2900A7215A /* UIView+Category.swift */; settings = {ASSET_TAGS = (); }; };
+		88D6DFCF1C991B600075EB08 /* CustomSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D6DFCE1C991B600075EB08 /* CustomSubView.xib */; settings = {ASSET_TAGS = (); }; };
+		88D6DFD11C991E650075EB08 /* CustomSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6DFD01C991E650075EB08 /* CustomSubView.swift */; settings = {ASSET_TAGS = (); }; };
+		88D6DFD31C9923160075EB08 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6DFD21C9923160075EB08 /* UIButton+Category.swift */; settings = {ASSET_TAGS = (); }; };
+		88D6DFDC1C9928600075EB08 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6DFDB1C9928600075EB08 /* Contacts.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +73,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCallsCell.swift; sourceTree = "<group>"; };
+		8800D4CD1C9B0C460081A777 /* AllCallsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllCallsCell.xib; sourceTree = "<group>"; };
 		8817E0D51C93E08500697957 /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
 		8817E0D71C93E65200697957 /* AddContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsViewController.swift; sourceTree = "<group>"; };
 		8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseHandler.swift; sourceTree = "<group>"; };
 		8817E0DE1C9434D500697957 /* AddContactsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsModel.swift; sourceTree = "<group>"; };
 		8817E11F1C94416C00697957 /* Contacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contacts.xcdatamodel; sourceTree = "<group>"; };
 		8817E1211C9448E900697957 /* Contacts+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contacts+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8817E1221C9448E900697957 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		8823FD361C8ED09400659C42 /* add_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_contact.png; sourceTree = "<group>"; };
 		8823FD371C8ED09400659C42 /* another_dial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = another_dial.png; sourceTree = "<group>"; };
 		8823FD381C8ED09400659C42 /* call_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_person.png; sourceTree = "<group>"; };
@@ -97,6 +105,8 @@
 		8823FD4B1C8ED09400659C42 /* star_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_selected.png; sourceTree = "<group>"; };
 		8823FD4C1C8ED09400659C42 /* VIP_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VIP_normal.png; sourceTree = "<group>"; };
 		88493A381C8DA8D30015F3D1 /* UIFont+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Category.swift"; sourceTree = "<group>"; };
+		8849D8E91C9A808500086B1C /* ContactsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
+		8849D8EA1C9A808500086B1C /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
 		8890E2F51C8AAB8D00A7215A /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8890E2F81C8AAB8D00A7215A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8890E2FA1C8AAB8D00A7215A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +121,10 @@
 		8890E3181C8AAB8E00A7215A /* ContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUITests.swift; sourceTree = "<group>"; };
 		8890E31A1C8AAB8E00A7215A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8890E3C41C8ACE2900A7215A /* UIView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Category.swift"; sourceTree = "<group>"; };
+		88D6DFCE1C991B600075EB08 /* CustomSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSubView.xib; sourceTree = "<group>"; };
+		88D6DFD01C991E650075EB08 /* CustomSubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSubView.swift; sourceTree = "<group>"; };
+		88D6DFD21C9923160075EB08 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
+		88D6DFDB1C9928600075EB08 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				8817E11E1C94416C00697957 /* Contacts.xcdatamodeld */,
+				88D6DFDB1C9928600075EB08 /* Contacts.swift */,
 				8817E1211C9448E900697957 /* Contacts+CoreDataProperties.swift */,
-				8817E1221C9448E900697957 /* Contacts.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -209,6 +223,7 @@
 		8890E2F71C8AAB8D00A7215A /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				88D6DFD61C99271B0075EB08 /* Constants */,
 				8817E11D1C94411D00697957 /* Database */,
 				8817E0DB1C94348A00697957 /* Model */,
 				8890E3C61C8ACE3500A7215A /* Helper */,
@@ -252,6 +267,9 @@
 				8890E2FA1C8AAB8D00A7215A /* ViewController.swift */,
 				8817E0D71C93E65200697957 /* AddContactsViewController.swift */,
 				8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */,
+				88D6DFD01C991E650075EB08 /* CustomSubView.swift */,
+				8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */,
+				8849D8E91C9A808500086B1C /* ContactsCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -261,6 +279,9 @@
 			children = (
 				8890E3011C8AAB8D00A7215A /* LaunchScreen.storyboard */,
 				8890E2FC1C8AAB8D00A7215A /* Main.storyboard */,
+				88D6DFCE1C991B600075EB08 /* CustomSubView.xib */,
+				8800D4CD1C9B0C460081A777 /* AllCallsCell.xib */,
+				8849D8EA1C9A808500086B1C /* ContactsCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -281,8 +302,16 @@
 				8890E3C41C8ACE2900A7215A /* UIView+Category.swift */,
 				88493A381C8DA8D30015F3D1 /* UIFont+Category.swift */,
 				8817E0D51C93E08500697957 /* UIColor+Category.swift */,
+				88D6DFD21C9923160075EB08 /* UIButton+Category.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		88D6DFD61C99271B0075EB08 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8800D4CF1C9B0C460081A777 /* AllCallsCell.xib in Resources */,
 				8890E3031C8AAB8D00A7215A /* LaunchScreen.storyboard in Resources */,
 				8823FD521C8ED09400659C42 /* contact_person.png in Resources */,
 				8890E3001C8AAB8D00A7215A /* Assets.xcassets in Resources */,
@@ -395,6 +425,7 @@
 				8823FD541C8ED09400659C42 /* Edit.png in Resources */,
 				8823FD571C8ED09400659C42 /* multi_person.jpeg in Resources */,
 				8823FD5F1C8ED09400659C42 /* single_normal.png in Resources */,
+				88D6DFCF1C991B600075EB08 /* CustomSubView.xib in Resources */,
 				8823FD551C8ED09400659C42 /* groupicon.png in Resources */,
 				8823FD631C8ED09400659C42 /* VIP_normal.png in Resources */,
 				8823FD611C8ED09400659C42 /* Star_normal.png in Resources */,
@@ -407,6 +438,7 @@
 				8823FD561C8ED09400659C42 /* keypad.png in Resources */,
 				8823FD621C8ED09400659C42 /* star_selected.png in Resources */,
 				8823FD4E1C8ED09400659C42 /* another_dial.png in Resources */,
+				8849D8EC1C9A808500086B1C /* ContactsCell.xib in Resources */,
 				8823FD501C8ED09400659C42 /* contact.jpeg in Resources */,
 				8823FD581C8ED09400659C42 /* multiperson_normal.png in Resources */,
 				8823FD531C8ED09400659C42 /* dropdown_arrow.png in Resources */,
@@ -438,17 +470,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88D6DFD31C9923160075EB08 /* UIButton+Category.swift in Sources */,
 				8817E0D61C93E08500697957 /* UIColor+Category.swift in Sources */,
 				8890E2FB1C8AAB8D00A7215A /* ViewController.swift in Sources */,
 				8817E0DF1C9434D500697957 /* AddContactsModel.swift in Sources */,
 				8890E2F91C8AAB8D00A7215A /* AppDelegate.swift in Sources */,
+				8800D4CE1C9B0C460081A777 /* AllCallsCell.swift in Sources */,
 				8817E0D81C93E65200697957 /* AddContactsViewController.swift in Sources */,
+				8849D8EB1C9A808500086B1C /* ContactsCell.swift in Sources */,
 				88493A391C8DA8D30015F3D1 /* UIFont+Category.swift in Sources */,
-				8817E1241C9448E900697957 /* Contacts.swift in Sources */,
+				88D6DFD11C991E650075EB08 /* CustomSubView.swift in Sources */,
 				8890E3C51C8ACE2900A7215A /* UIView+Category.swift in Sources */,
 				8817E0DD1C9434BB00697957 /* DataBaseHandler.swift in Sources */,
 				8817E1231C9448E900697957 /* Contacts+CoreDataProperties.swift in Sources */,
 				8817E1201C94416C00697957 /* Contacts.xcdatamodeld in Sources */,
+				88D6DFDC1C9928600075EB08 /* Contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
