@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController, AddContactsViewControllerDelegate, CustomSubViewDelegate, UIScrollViewDelegate
 {
     @IBOutlet weak var phoneKeyPadButton: UIButton!
@@ -22,15 +23,17 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     var alphabeticArray:NSMutableArray = NSMutableArray();
     let value:CGFloat = 50;
     let value1:CGFloat = 80;
-    var storedContacts = []
+    var storedContacts:NSMutableArray = NSMutableArray()
     var customSubView:CustomSubView!;
+    let testVC = TestViewController();
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        intialization();
+        //Calling Objective C class method
+        testVC.test();
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -41,8 +44,7 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
         
-        setCustomSubViewProperties();
-        setScrollViewOffset(CGRectGetMaxX(self.holderScrollView.frame));
+        intialization();
     }
     override func didReceiveMemoryWarning()
     {
@@ -62,9 +64,19 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
         contactsButton.selected = true;
         bottomBarView.hidden = true;
         
+        if customSubView == nil
+        {
+            let nibView = self.view.loadFromNibNamed(Constants.ControllerConstants.customViewNibName)! as! CustomSubView
+            customSubView = nibView
+            
+            createAddContactButton();
+            setScrollViewOffset(CGRectGetMaxX(self.holderScrollView.frame));
+        }
+        
         fetchStoredContactsDetails();
         formAlphabeticCharacters();
-        createAddContactButton();
+        setCustomSubViewProperties();
+        
     }
     
     
@@ -72,7 +84,7 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     {
         let dataBaseHandler = DataBaseHandler.sharedInstance;
         dataBaseHandler.fetchData();
-        storedContacts = dataBaseHandler.storedContacts;
+        storedContacts = dataBaseHandler.storedContacts!
     }
     
     func formAlphabeticCharacters()
@@ -102,14 +114,12 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     
     func setCustomSubViewProperties()
     {
-        let nibView = self.view.loadFromNibNamed(Constants.ControllerConstants.customViewNibName)! as! CustomSubView
-        nibView.alphabeticArray = self.alphabeticArray
-        nibView.alphabeticSortingDict = self.alphabeticSortingDict
-        customSubView = nibView
         customSubView.alphabeticArray = alphabeticArray;
         customSubView.alphabeticSortingDict = alphabeticSortingDict;
+        customSubView.storedContactsArray = storedContacts;
+        customSubView.delegate = self;
         
-        customSubView.frame = CGRectMake(CGRectGetMinX(self.holderScrollView.bounds), CGRectGetMinY(self.holderScrollView.bounds), CGRectGetWidth(self.holderScrollView.frame)*3, CGRectGetHeight(self.holderScrollView.frame));
+        customSubView.frame = CGRectMake(0, CGRectGetMinY(self.holderScrollView.bounds), CGRectGetWidth(self.holderScrollView.frame)*3, CGRectGetHeight(self.holderScrollView.frame));
         
         customSubView.translatesAutoresizingMaskIntoConstraints = true;
         
@@ -125,6 +135,7 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
         addContactsButton.setButtonProperties();
         addContactsButton.addTarget(self , action: "didClickOnAddContactsButton", forControlEvents: UIControlEvents.TouchUpInside);
         self.view.addSubview(addContactsButton);
+        self.view.bringSubviewToFront(bottomBarView);
         self.view.bringSubviewToFront(addContactsButton);
     }
     
@@ -146,7 +157,7 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     
     @IBAction func didClickOnContactsButton(sender: AnyObject)
     {
-        setScrollViewOffset(CGRectGetMaxX(self.holderScrollView.frame));
+        setScrollViewOffset(CGRectGetWidth(self.holderScrollView.frame));
         bottomBarView.hidden = true;
         self.phoneKeyPadButton.selected = false;
         self.contactsButton.selected = true;
@@ -155,7 +166,7 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     
     @IBAction func didClickOnGroupContactsButton(sender: AnyObject)
     {
-        setScrollViewOffset(CGRectGetMaxX(self.holderScrollView.frame)*2);
+        setScrollViewOffset(CGRectGetWidth(self.holderScrollView.frame)*2);
         bottomBarView.hidden = true;
         self.phoneKeyPadButton.selected = false;
         self.contactsButton.selected = false;
@@ -167,6 +178,28 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
         self.performSegueWithIdentifier(Constants.ControllerConstants.identifier, sender: self);
     }
     
+    func addDisplayViewController()
+    {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("display")
+        
+        self.presentViewController(vc, animated: true) { () -> Void in
+            
+            let displayViewController = vc as! DisplayViewController
+            displayViewController.view.backgroundColor = UIColor.whiteColor()
+            
+            let selectedContact = self.customSubView.getSelectedContact()
+            displayViewController.displayNamePrefix.text = selectedContact.namePrefix
+            displayViewController.firstNameDisplay.text  = selectedContact.firstName;
+            displayViewController.middleNameDisplay.text = selectedContact.middleName;
+            displayViewController.surnameDisplay.text = selectedContact.surname;
+            displayViewController.nameSuffixDIsplay.text = selectedContact.nameSuffix;
+            displayViewController.companyDisplay.text = selectedContact.company;
+            displayViewController.titleDisplay.text = selectedContact.title;
+            displayViewController.phoneNumberDisplay.text = selectedContact.phone;
+            displayViewController.emailIDDisplay.text = selectedContact.email;
+        }
+    }
+    
     //MARK: Perform segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -174,6 +207,10 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
         {
             let addContactsVC = segue.destinationViewController as! AddContactsViewController;
             addContactsVC.delegate = self;
+        }
+        else if segue.identifier == Constants.ControllerConstants.displayIdentifier
+        {
+            
         }
     }
     
@@ -183,6 +220,8 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     {
         fetchStoredContactsDetails();
         formAlphabeticCharacters();
+        
+        customSubView.reloadTableData();
     }
     
     //MARK ScrollView Delegate methods

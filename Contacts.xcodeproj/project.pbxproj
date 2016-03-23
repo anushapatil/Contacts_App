@@ -10,6 +10,8 @@
 		8800D4CE1C9B0C460081A777 /* AllCallsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8800D4CF1C9B0C460081A777 /* AllCallsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8800D4CD1C9B0C460081A777 /* AllCallsCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8800D4D11C9B17C70081A777 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8800D4D01C9B17C70081A777 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		881489121C9C409B00101DD9 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881489101C9C409B00101DD9 /* TestViewController.m */; settings = {ASSET_TAGS = (); }; };
+		881489131C9C409B00101DD9 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881489111C9C409B00101DD9 /* TestViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		8817E0D61C93E08500697957 /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0D51C93E08500697957 /* UIColor+Category.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E0D81C93E65200697957 /* AddContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0D71C93E65200697957 /* AddContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8817E0DD1C9434BB00697957 /* DataBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */; settings = {ASSET_TAGS = (); }; };
@@ -50,6 +52,7 @@
 		8890E30E1C8AAB8E00A7215A /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E30D1C8AAB8E00A7215A /* ContactsTests.swift */; };
 		8890E3191C8AAB8E00A7215A /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E3181C8AAB8E00A7215A /* ContactsUITests.swift */; };
 		8890E3C51C8ACE2900A7215A /* UIView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8890E3C41C8ACE2900A7215A /* UIView+Category.swift */; settings = {ASSET_TAGS = (); }; };
+		88CF6B301CA008700087FF6B /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF6B2F1CA008700087FF6B /* DisplayViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		88D6DFCF1C991B600075EB08 /* CustomSubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D6DFCE1C991B600075EB08 /* CustomSubView.xib */; settings = {ASSET_TAGS = (); }; };
 		88D6DFD11C991E650075EB08 /* CustomSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6DFD01C991E650075EB08 /* CustomSubView.swift */; settings = {ASSET_TAGS = (); }; };
 		88D6DFD31C9923160075EB08 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D6DFD21C9923160075EB08 /* UIButton+Category.swift */; settings = {ASSET_TAGS = (); }; };
@@ -77,6 +80,10 @@
 		8800D4CC1C9B0C460081A777 /* AllCallsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllCallsCell.swift; sourceTree = "<group>"; };
 		8800D4CD1C9B0C460081A777 /* AllCallsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllCallsCell.xib; sourceTree = "<group>"; };
 		8800D4D01C9B17C70081A777 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8814890F1C9C409B00101DD9 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		881489101C9C409B00101DD9 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		881489111C9C409B00101DD9 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		881489141C9C424100101DD9 /* Contacts-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Contacts-Bridging-Header.h"; sourceTree = "<group>"; };
 		8817E0D51C93E08500697957 /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
 		8817E0D71C93E65200697957 /* AddContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsViewController.swift; sourceTree = "<group>"; };
 		8817E0DC1C9434BB00697957 /* DataBaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseHandler.swift; sourceTree = "<group>"; };
@@ -123,6 +130,7 @@
 		8890E3181C8AAB8E00A7215A /* ContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUITests.swift; sourceTree = "<group>"; };
 		8890E31A1C8AAB8E00A7215A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8890E3C41C8ACE2900A7215A /* UIView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Category.swift"; sourceTree = "<group>"; };
+		88CF6B2F1CA008700087FF6B /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		88D6DFCE1C991B600075EB08 /* CustomSubView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSubView.xib; sourceTree = "<group>"; };
 		88D6DFD01C991E650075EB08 /* CustomSubView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSubView.swift; sourceTree = "<group>"; };
 		88D6DFD21C9923160075EB08 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
@@ -154,6 +162,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881489151C9C48C700101DD9 /* ExtraController */ = {
+			isa = PBXGroup;
+			children = (
+				8814890F1C9C409B00101DD9 /* TestViewController.h */,
+				881489101C9C409B00101DD9 /* TestViewController.m */,
+				881489111C9C409B00101DD9 /* TestViewController.xib */,
+			);
+			name = ExtraController;
+			sourceTree = "<group>";
+		};
 		8817E0DB1C94348A00697957 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +227,7 @@
 		8890E2EC1C8AAB8D00A7215A = {
 			isa = PBXGroup;
 			children = (
+				881489141C9C424100101DD9 /* Contacts-Bridging-Header.h */,
 				8890E2F71C8AAB8D00A7215A /* Contacts */,
 				8890E30C1C8AAB8E00A7215A /* ContactsTests */,
 				8890E3171C8AAB8E00A7215A /* ContactsUITests */,
@@ -272,6 +291,8 @@
 			children = (
 				8890E2FA1C8AAB8D00A7215A /* ViewController.swift */,
 				8817E0D71C93E65200697957 /* AddContactsViewController.swift */,
+				88CF6B2F1CA008700087FF6B /* DisplayViewController.swift */,
+				881489151C9C48C700101DD9 /* ExtraController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -379,6 +400,7 @@
 		8890E2ED1C8AAB8D00A7215A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Anusha Patil";
 				TargetAttributes = {
@@ -426,6 +448,7 @@
 				8890E3001C8AAB8D00A7215A /* Assets.xcassets in Resources */,
 				8823FD4D1C8ED09400659C42 /* add_contact.png in Resources */,
 				8823FD541C8ED09400659C42 /* Edit.png in Resources */,
+				881489131C9C409B00101DD9 /* TestViewController.xib in Resources */,
 				8823FD571C8ED09400659C42 /* multi_person.jpeg in Resources */,
 				8823FD5F1C8ED09400659C42 /* single_normal.png in Resources */,
 				88D6DFCF1C991B600075EB08 /* CustomSubView.xib in Resources */,
@@ -480,11 +503,13 @@
 				8890E2F91C8AAB8D00A7215A /* AppDelegate.swift in Sources */,
 				8800D4CE1C9B0C460081A777 /* AllCallsCell.swift in Sources */,
 				8817E0D81C93E65200697957 /* AddContactsViewController.swift in Sources */,
+				88CF6B301CA008700087FF6B /* DisplayViewController.swift in Sources */,
 				8800D4D11C9B17C70081A777 /* Constants.swift in Sources */,
 				8849D8EB1C9A808500086B1C /* ContactsCell.swift in Sources */,
 				88493A391C8DA8D30015F3D1 /* UIFont+Category.swift in Sources */,
 				88D6DFD11C991E650075EB08 /* CustomSubView.swift in Sources */,
 				8890E3C51C8ACE2900A7215A /* UIView+Category.swift in Sources */,
+				881489121C9C409B00101DD9 /* TestViewController.m in Sources */,
 				8817E0DD1C9434BB00697957 /* DataBaseHandler.swift in Sources */,
 				8817E1231C9448E900697957 /* Contacts+CoreDataProperties.swift in Sources */,
 				8817E1201C94416C00697957 /* Contacts.xcdatamodeld in Sources */,
@@ -630,11 +655,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Contacts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = hurix.Contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Anusha/Desktop/work/Contacts/Contacts-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -642,11 +672,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Contacts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = hurix.Contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Anusha/Desktop/work/Contacts/Contacts-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

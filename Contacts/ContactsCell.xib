@@ -18,7 +18,6 @@
                         <rect key="frame" x="68" y="11" width="272" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="146-ne-Q5c"/>
-                            <constraint firstAttribute="width" constant="272" id="agl-I0-EtO"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

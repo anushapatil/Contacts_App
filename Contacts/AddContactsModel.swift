@@ -26,4 +26,9 @@ class AddContactsModel: NSObject
     var emailType: String!
     var addressType: String!
     var specialDatesType: String!
+
+    func testSwift()
+    {
+        
+    }
 }

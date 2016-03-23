@@ -11,7 +11,7 @@ import CoreData
 
 class DataBaseHandler: NSObject
 {
-    var storedContacts = []
+    var storedContacts:NSMutableArray?
     //MARK: Singleton class
     class var sharedInstance: DataBaseHandler
     {
@@ -100,14 +100,14 @@ class DataBaseHandler: NSObject
         let fetchRequest = NSFetchRequest();
         let entityDescription = NSEntityDescription.entityForName("Contacts", inManagedObjectContext: self.managedObjectContext);
         
-        let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true, selector: "localizedStandardCompare:")
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.returnsObjectsAsFaults = false;
         fetchRequest.entity = entityDescription;
         do
         {
             let result = try self.managedObjectContext.executeFetchRequest(fetchRequest);
-            storedContacts = result;
+            storedContacts = result as! NSMutableArray
             print(result);
         }
         catch

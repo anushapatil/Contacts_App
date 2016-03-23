@@ -139,10 +139,10 @@ class AddContactsViewController: UIViewController
         {
             value = isValidEmail(textField.text!);
         }
-        else if textField == phoneTextField
-        {
-            value = validate(textField.text!)
-        }
+//        else if textField == phoneTextField
+//        {
+//            value = validate(textField.text!)
+//        }
         
         if !value && textField.text != ""
         {
