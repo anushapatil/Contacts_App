@@ -43,6 +43,7 @@ class AddContactsViewController: UIViewController, ProfileViewControllerDelegate
     var delegate: AddContactsViewControllerDelegate!
     var profileViewController: ProfileViewController!
     var validator = Validator()
+    var profilePicImage:UIImage!
     
     override func viewDidLoad()
     {
@@ -53,7 +54,7 @@ class AddContactsViewController: UIViewController, ProfileViewControllerDelegate
     
     @IBAction func didClickOnProfilePicSelectionButton(sender: AnyObject)
     {
-       
+        self.performSegueWithIdentifier("profile", sender: self)
     }
     
     @IBAction func specialDatesSideButtonClicked(sender: AnyObject)
@@ -88,11 +89,22 @@ class AddContactsViewController: UIViewController, ProfileViewControllerDelegate
     
     @IBAction func didClickOnDoneButton(sender: AnyObject)
     {
+        let dataBaseHandle = DataBaseHandler.sharedInstance;
+
         if firstNameTextField.text != ""
         {
             let addContactsModel:AddContactsModel = prepareContactsModel();
-            let dataBaseHandle = DataBaseHandler.sharedInstance;
             dataBaseHandle.savingContactsWithDetails(addContactsModel);
+            
+            //Save profile image to the directory
+            
+            let imageFolderPath = dataBaseHandle.applicationDocumentsDirectory.URLByAppendingPathComponent(String(format: "%@.jpeg",firstNameTextField.text!))
+            
+            let value = UIImageJPEGRepresentation(profilePicImage, 1.0)?.writeToURL(imageFolderPath, atomically: true)
+            if value == true
+            {
+                NSLog("Yes written");
+            }
 
         }
         
@@ -108,12 +120,16 @@ class AddContactsViewController: UIViewController, ProfileViewControllerDelegate
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
-        profileViewController = segue.destinationViewController as! ProfileViewController;
-        profileViewController.delegate = self;
+        if segue.identifier == "profile"
+        {
+            profileViewController = segue.destinationViewController as! ProfileViewController;
+            profileViewController.delegate = self;
+        }
     }
     
     func updatedProfilePic(image: UIImage)
     {
+        profilePicImage = image;
         profilePicButton.setImage(image, forState: .Normal);
     }
     
@@ -149,12 +165,13 @@ class AddContactsViewController: UIViewController, ProfileViewControllerDelegate
     
     func textFieldDidEndEditing(textField: UITextField)
     {
-        var value = true;
+        let value = true;
+        let label = UILabel();
         
         if textField == emailTextField
         {
             //validating email from pod file project
-            validator.registerField(emailTextField, errorLabel: nil, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
+            validator.registerField(emailTextField, errorLabel: label, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
             
         }
         

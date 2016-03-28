@@ -200,6 +200,11 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
             displayViewController.emailIDDisplay.text = selectedContact.email;
             displayViewController.addressDisplay.text = selectedContact.address;
             displayViewController.firstNameString = selectedContact.firstName!;
+            
+            //Get image from directory and set
+            let dataBaseHandler = DataBaseHandler.sharedInstance;
+            let imageFolderPath = dataBaseHandler.applicationDocumentsDirectory.URLByAppendingPathComponent(String(format: "%@.jpeg",selectedContact.firstName!))
+            displayViewController.profilePicImage.image = UIImage(contentsOfFile: imageFolderPath.absoluteString)
         }
     }
     
