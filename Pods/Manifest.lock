@@ -1,0 +1,10 @@
+PODS:
+  - SwiftValidator (3.0.3)
+
+DEPENDENCIES:
+  - SwiftValidator (= 3.0.3)
+
+SPEC CHECKSUMS:
+  SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
+
+COCOAPODS: 0.39.0

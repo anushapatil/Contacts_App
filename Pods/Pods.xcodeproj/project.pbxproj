@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D13C8F04BE946DDA110E77CE0EB67AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		14F9E64E673657473285C78895664CD6 /* ExactLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C368A9F03CAF1CE159E74917191978 /* ExactLengthRule.swift */; };
+		2789AEA39FEE9DCD1AC216FFE76AC11A /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB81F003B7E6609FB61ABBE56F61A1B3 /* EmailRule.swift */; };
+		29791E12A2B0D9B1D90DF2B504533701 /* Pods-Contacts-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 262BB4ECFB5F346B0AB4A6BB7BF31A79 /* Pods-Contacts-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A09622FC36E7F9CE3DF658F6C0C26FE /* RequiredRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC4882A8AE0B6D3A39306A165D46FE1 /* RequiredRule.swift */; };
+		2B7F5F1CB52173F7D1083ECB466A0E01 /* MaxLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AA90D36A51339447375FA68B5D647C /* MaxLengthRule.swift */; };
+		3CB635E5698471BFD2324731FBFCB5C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
+		4CCF7BCCE6E6CE174AFFFDF00A523380 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF091478C0B5391D8538F2CCBF1E8FE /* ValidationRule.swift */; };
+		5C76FC40F34AFCC24A4D9F5BF2D97D95 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D2B59A8C9B9EE265132EE11BA0DDC /* Validator.swift */; };
+		6B07D5D3C4B6544A023910474F390DAA /* FloatRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C147DB68A9B64BC0BA73C0C1356A0DA /* FloatRule.swift */; };
+		70AEBA445EA714C60BCF40B56B7C70A1 /* PhoneNumberRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3EAAD892554F3060D1CBF844CACE4B /* PhoneNumberRule.swift */; };
+		7367BEA79F2DEE280D55F87686BC8FF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		7F4430BFA90045043422729D53412232 /* SwiftValidator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE0A298710DAB524CCD799FE6BE086E /* SwiftValidator-dummy.m */; };
+		89082DC42381307BD068AD5672AB07F1 /* FullNameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5D523749FEE9D344A2F50BD80A5111 /* FullNameRule.swift */; };
+		91A16731A79895EB654F059895FE69C3 /* RegexRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ADF64DDDA74BFCD2B42FD87323B20A /* RegexRule.swift */; };
+		98263E5A4F0E81B603925FB9B9A61284 /* Pods-Contacts-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52157D769A8DF0D882D0CD64CF0B2EA2 /* Pods-Contacts-dummy.m */; };
+		98D56DD1D94AFCC91AE654D4D825714E /* ValidationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ADC2B0AC2661D3A6D7B5D7ADDA453 /* ValidationDelegate.swift */; };
+		9A591FAFFFE88CF16FF5644C6DE59366 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE7293382C9DF924796E34566410092 /* Rule.swift */; };
+		A457A872170E7339D1B774BA7C78A0A4 /* ZipCodeRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08EE3FDF3880E6A949218DAEBC07039 /* ZipCodeRule.swift */; };
+		AD0D04A9750DBA08FEC8E2E9D9AF69F2 /* PasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B23AE1A35071224B30BBE6A40D84C /* PasswordRule.swift */; };
+		D011CEE0E9F5A13CC54145A500A0B64C /* MinLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFFD59074AD51E1EB9A211B2BB6E401 /* MinLengthRule.swift */; };
+		D5FF0834EDE0B9DCE27DD6EC84CDECAD /* ConfirmRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FA9CDDCF23809FC446006A87EFEEF /* ConfirmRule.swift */; };
+		DA511F62ECEE9B7FD712A53238093214 /* SwiftValidator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F797001DC14600475E53441A945B65D /* SwiftValidator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBA25A190D4D46C500A3829D1C30098D /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E866A52D2C994501FC399EC5EB5616DE /* ValidationError.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6FB3DE04BFC24585357123C5534B0AEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 821AA71DAB41B82F281254165788A206;
+			remoteInfo = SwiftValidator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0DB266AD4959F7DF5BD832CC7ED7C084 /* Pods-Contacts-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Contacts-resources.sh"; sourceTree = "<group>"; };
+		1742CF1AF96C32470455A2CEE9698527 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EF091478C0B5391D8538F2CCBF1E8FE /* ValidationRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationRule.swift; path = SwiftValidator/Rules/ValidationRule.swift; sourceTree = "<group>"; };
+		23861000B12BBD48D09E6CCF43E729BA /* Pods-Contacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Contacts.debug.xcconfig"; sourceTree = "<group>"; };
+		23AA90D36A51339447375FA68B5D647C /* MaxLengthRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MaxLengthRule.swift; path = SwiftValidator/Rules/MaxLengthRule.swift; sourceTree = "<group>"; };
+		23C5DF92ED0EF672AD46BBF62531D103 /* SwiftValidator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftValidator-prefix.pch"; sourceTree = "<group>"; };
+		262BB4ECFB5F346B0AB4A6BB7BF31A79 /* Pods-Contacts-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Contacts-umbrella.h"; sourceTree = "<group>"; };
+		282794946CE60A9328E7D6B68FBCF115 /* Pods-Contacts-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Contacts-acknowledgements.plist"; sourceTree = "<group>"; };
+		2FE0A298710DAB524CCD799FE6BE086E /* SwiftValidator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftValidator-dummy.m"; sourceTree = "<group>"; };
+		3A959023517C3BCC987CCF79381350C6 /* SwiftValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52157D769A8DF0D882D0CD64CF0B2EA2 /* Pods-Contacts-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Contacts-dummy.m"; sourceTree = "<group>"; };
+		544D2B59A8C9B9EE265132EE11BA0DDC /* Validator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validator.swift; path = SwiftValidator/Core/Validator.swift; sourceTree = "<group>"; };
+		5D6608DD2C8E078BBFDDC6CB830BFDE5 /* SwiftValidator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftValidator.modulemap; sourceTree = "<group>"; };
+		621595DBFE84C90F263D0CF72146DD04 /* Pods_Contacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Contacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D5D523749FEE9D344A2F50BD80A5111 /* FullNameRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FullNameRule.swift; path = SwiftValidator/Rules/FullNameRule.swift; sourceTree = "<group>"; };
+		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6ECC96D7A25C24B794C08B69D5AEA0FA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74C368A9F03CAF1CE159E74917191978 /* ExactLengthRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExactLengthRule.swift; path = SwiftValidator/Rules/ExactLengthRule.swift; sourceTree = "<group>"; };
+		76DB197D1501D497ED24714087DD115E /* Pods-Contacts-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Contacts-frameworks.sh"; sourceTree = "<group>"; };
+		792780BB3A6DB6D9B02739E1A8BD2973 /* SwiftValidator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftValidator.xcconfig; sourceTree = "<group>"; };
+		7EFFD59074AD51E1EB9A211B2BB6E401 /* MinLengthRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MinLengthRule.swift; path = SwiftValidator/Rules/MinLengthRule.swift; sourceTree = "<group>"; };
+		7F797001DC14600475E53441A945B65D /* SwiftValidator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftValidator-umbrella.h"; sourceTree = "<group>"; };
+		8C147DB68A9B64BC0BA73C0C1356A0DA /* FloatRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FloatRule.swift; path = SwiftValidator/Rules/FloatRule.swift; sourceTree = "<group>"; };
+		8DC4882A8AE0B6D3A39306A165D46FE1 /* RequiredRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequiredRule.swift; path = SwiftValidator/Rules/RequiredRule.swift; sourceTree = "<group>"; };
+		8E3FA9CDDCF23809FC446006A87EFEEF /* ConfirmRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConfirmRule.swift; path = SwiftValidator/Rules/ConfirmRule.swift; sourceTree = "<group>"; };
+		96ADF64DDDA74BFCD2B42FD87323B20A /* RegexRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RegexRule.swift; path = SwiftValidator/Rules/RegexRule.swift; sourceTree = "<group>"; };
+		9F3B23AE1A35071224B30BBE6A40D84C /* PasswordRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PasswordRule.swift; path = SwiftValidator/Rules/PasswordRule.swift; sourceTree = "<group>"; };
+		A11ADC2B0AC2661D3A6D7B5D7ADDA453 /* ValidationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationDelegate.swift; path = SwiftValidator/Core/ValidationDelegate.swift; sourceTree = "<group>"; };
+		A935A4FFB2FF01EC4E2A4CA3B19932EB /* Pods-Contacts.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Contacts.modulemap"; sourceTree = "<group>"; };
+		AC3EAAD892554F3060D1CBF844CACE4B /* PhoneNumberRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhoneNumberRule.swift; path = SwiftValidator/Rules/PhoneNumberRule.swift; sourceTree = "<group>"; };
+		B76D4C0B753214AB99F5645C3183C298 /* Pods-Contacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Contacts.release.xcconfig"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BB81F003B7E6609FB61ABBE56F61A1B3 /* EmailRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmailRule.swift; path = SwiftValidator/Rules/EmailRule.swift; sourceTree = "<group>"; };
+		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		CBE7293382C9DF924796E34566410092 /* Rule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rule.swift; path = SwiftValidator/Rules/Rule.swift; sourceTree = "<group>"; };
+		E08EE3FDF3880E6A949218DAEBC07039 /* ZipCodeRule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZipCodeRule.swift; path = SwiftValidator/Rules/ZipCodeRule.swift; sourceTree = "<group>"; };
+		E7387952836110A248A193FE7E22B341 /* Pods-Contacts-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Contacts-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E866A52D2C994501FC399EC5EB5616DE /* ValidationError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidationError.swift; path = SwiftValidator/Core/ValidationError.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3823AA55FF00F73EE2AA7C8B31829FBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7367BEA79F2DEE280D55F87686BC8FF5 /* Foundation.framework in Frameworks */,
+				3CB635E5698471BFD2324731FBFCB5C2 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E980328EA514F9D3E1073990AE293798 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D13C8F04BE946DDA110E77CE0EB67AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
+				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		1FAEBDBA1DB4119A33701C6C2D12B2CE /* SwiftValidator */ = {
+			isa = PBXGroup;
+			children = (
+				8E3FA9CDDCF23809FC446006A87EFEEF /* ConfirmRule.swift */,
+				BB81F003B7E6609FB61ABBE56F61A1B3 /* EmailRule.swift */,
+				74C368A9F03CAF1CE159E74917191978 /* ExactLengthRule.swift */,
+				8C147DB68A9B64BC0BA73C0C1356A0DA /* FloatRule.swift */,
+				6D5D523749FEE9D344A2F50BD80A5111 /* FullNameRule.swift */,
+				23AA90D36A51339447375FA68B5D647C /* MaxLengthRule.swift */,
+				7EFFD59074AD51E1EB9A211B2BB6E401 /* MinLengthRule.swift */,
+				9F3B23AE1A35071224B30BBE6A40D84C /* PasswordRule.swift */,
+				AC3EAAD892554F3060D1CBF844CACE4B /* PhoneNumberRule.swift */,
+				96ADF64DDDA74BFCD2B42FD87323B20A /* RegexRule.swift */,
+				8DC4882A8AE0B6D3A39306A165D46FE1 /* RequiredRule.swift */,
+				CBE7293382C9DF924796E34566410092 /* Rule.swift */,
+				A11ADC2B0AC2661D3A6D7B5D7ADDA453 /* ValidationDelegate.swift */,
+				E866A52D2C994501FC399EC5EB5616DE /* ValidationError.swift */,
+				1EF091478C0B5391D8538F2CCBF1E8FE /* ValidationRule.swift */,
+				544D2B59A8C9B9EE265132EE11BA0DDC /* Validator.swift */,
+				E08EE3FDF3880E6A949218DAEBC07039 /* ZipCodeRule.swift */,
+				AD017789969B73608F4B5D258DFDEFA1 /* Support Files */,
+			);
+			path = SwiftValidator;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18340F12838DEE43507667CC74401EB1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				AC4BB813AA538140ED25992BCF717C30 /* Pods */,
+				EE882C748AB07FAC09FFE3EB16C37E0F /* Products */,
+				99A039B4892A89699F4804C3F8ED4EED /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		99A039B4892A89699F4804C3F8ED4EED /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF74D4E55E261C6EEB6E65692B88ADA3 /* Pods-Contacts */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AC4BB813AA538140ED25992BCF717C30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FAEBDBA1DB4119A33701C6C2D12B2CE /* SwiftValidator */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD017789969B73608F4B5D258DFDEFA1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1742CF1AF96C32470455A2CEE9698527 /* Info.plist */,
+				5D6608DD2C8E078BBFDDC6CB830BFDE5 /* SwiftValidator.modulemap */,
+				792780BB3A6DB6D9B02739E1A8BD2973 /* SwiftValidator.xcconfig */,
+				2FE0A298710DAB524CCD799FE6BE086E /* SwiftValidator-dummy.m */,
+				23C5DF92ED0EF672AD46BBF62531D103 /* SwiftValidator-prefix.pch */,
+				7F797001DC14600475E53441A945B65D /* SwiftValidator-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftValidator";
+			sourceTree = "<group>";
+		};
+		DF74D4E55E261C6EEB6E65692B88ADA3 /* Pods-Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				6ECC96D7A25C24B794C08B69D5AEA0FA /* Info.plist */,
+				A935A4FFB2FF01EC4E2A4CA3B19932EB /* Pods-Contacts.modulemap */,
+				E7387952836110A248A193FE7E22B341 /* Pods-Contacts-acknowledgements.markdown */,
+				282794946CE60A9328E7D6B68FBCF115 /* Pods-Contacts-acknowledgements.plist */,
+				52157D769A8DF0D882D0CD64CF0B2EA2 /* Pods-Contacts-dummy.m */,
+				76DB197D1501D497ED24714087DD115E /* Pods-Contacts-frameworks.sh */,
+				0DB266AD4959F7DF5BD832CC7ED7C084 /* Pods-Contacts-resources.sh */,
+				262BB4ECFB5F346B0AB4A6BB7BF31A79 /* Pods-Contacts-umbrella.h */,
+				23861000B12BBD48D09E6CCF43E729BA /* Pods-Contacts.debug.xcconfig */,
+				B76D4C0B753214AB99F5645C3183C298 /* Pods-Contacts.release.xcconfig */,
+			);
+			name = "Pods-Contacts";
+			path = "Target Support Files/Pods-Contacts";
+			sourceTree = "<group>";
+		};
+		EE882C748AB07FAC09FFE3EB16C37E0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				621595DBFE84C90F263D0CF72146DD04 /* Pods_Contacts.framework */,
+				3A959023517C3BCC987CCF79381350C6 /* SwiftValidator.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		08CD93ABCC510A12417D5E4BB0BD156A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29791E12A2B0D9B1D90DF2B504533701 /* Pods-Contacts-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6623F18833C016F05D81D6D5E90ED5FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA511F62ECEE9B7FD712A53238093214 /* SwiftValidator-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		821AA71DAB41B82F281254165788A206 /* SwiftValidator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E4CF8DDBDBEB686DAA45258682EF382 /* Build configuration list for PBXNativeTarget "SwiftValidator" */;
+			buildPhases = (
+				7DB27874813BAD2F5BD2CF7B40019273 /* Sources */,
+				3823AA55FF00F73EE2AA7C8B31829FBB /* Frameworks */,
+				6623F18833C016F05D81D6D5E90ED5FA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftValidator;
+			productName = SwiftValidator;
+			productReference = 3A959023517C3BCC987CCF79381350C6 /* SwiftValidator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DAE9C99DD6A065ACD7DFCA238C6C7C99 /* Pods-Contacts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F600428C0756F7EE7B710FBC9F0060C /* Build configuration list for PBXNativeTarget "Pods-Contacts" */;
+			buildPhases = (
+				984A9F141280E1F5D85D655E791BD6E5 /* Sources */,
+				E980328EA514F9D3E1073990AE293798 /* Frameworks */,
+				08CD93ABCC510A12417D5E4BB0BD156A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F85A31357CA11CB1EC63422F485DBD22 /* PBXTargetDependency */,
+			);
+			name = "Pods-Contacts";
+			productName = "Pods-Contacts";
+			productReference = 621595DBFE84C90F263D0CF72146DD04 /* Pods_Contacts.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = EE882C748AB07FAC09FFE3EB16C37E0F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAE9C99DD6A065ACD7DFCA238C6C7C99 /* Pods-Contacts */,
+				821AA71DAB41B82F281254165788A206 /* SwiftValidator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DB27874813BAD2F5BD2CF7B40019273 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5FF0834EDE0B9DCE27DD6EC84CDECAD /* ConfirmRule.swift in Sources */,
+				2789AEA39FEE9DCD1AC216FFE76AC11A /* EmailRule.swift in Sources */,
+				14F9E64E673657473285C78895664CD6 /* ExactLengthRule.swift in Sources */,
+				6B07D5D3C4B6544A023910474F390DAA /* FloatRule.swift in Sources */,
+				89082DC42381307BD068AD5672AB07F1 /* FullNameRule.swift in Sources */,
+				2B7F5F1CB52173F7D1083ECB466A0E01 /* MaxLengthRule.swift in Sources */,
+				D011CEE0E9F5A13CC54145A500A0B64C /* MinLengthRule.swift in Sources */,
+				AD0D04A9750DBA08FEC8E2E9D9AF69F2 /* PasswordRule.swift in Sources */,
+				70AEBA445EA714C60BCF40B56B7C70A1 /* PhoneNumberRule.swift in Sources */,
+				91A16731A79895EB654F059895FE69C3 /* RegexRule.swift in Sources */,
+				2A09622FC36E7F9CE3DF658F6C0C26FE /* RequiredRule.swift in Sources */,
+				9A591FAFFFE88CF16FF5644C6DE59366 /* Rule.swift in Sources */,
+				7F4430BFA90045043422729D53412232 /* SwiftValidator-dummy.m in Sources */,
+				98D56DD1D94AFCC91AE654D4D825714E /* ValidationDelegate.swift in Sources */,
+				FBA25A190D4D46C500A3829D1C30098D /* ValidationError.swift in Sources */,
+				4CCF7BCCE6E6CE174AFFFDF00A523380 /* ValidationRule.swift in Sources */,
+				5C76FC40F34AFCC24A4D9F5BF2D97D95 /* Validator.swift in Sources */,
+				A457A872170E7339D1B774BA7C78A0A4 /* ZipCodeRule.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		984A9F141280E1F5D85D655E791BD6E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98263E5A4F0E81B603925FB9B9A61284 /* Pods-Contacts-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F85A31357CA11CB1EC63422F485DBD22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftValidator;
+			target = 821AA71DAB41B82F281254165788A206 /* SwiftValidator */;
+			targetProxy = 6FB3DE04BFC24585357123C5534B0AEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		735D3903AFAADFE47947AC409F23DD55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 792780BB3A6DB6D9B02739E1A8BD2973 /* SwiftValidator.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftValidator/SwiftValidator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftValidator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftValidator/SwiftValidator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftValidator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9EB645C612834738B99727720210C23E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C022868938A68A24B7F83575C8E7BCE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 792780BB3A6DB6D9B02739E1A8BD2973 /* SwiftValidator.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftValidator/SwiftValidator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftValidator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftValidator/SwiftValidator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftValidator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E39CD1E764776175CB82EEC82A6C9948 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6FC3107551CD0DD4C1A49A96479B8B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B76D4C0B753214AB99F5645C3183C298 /* Pods-Contacts.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Contacts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Contacts/Pods-Contacts.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Contacts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEFB2BA4AB9BA9EA3215EFB7D68856F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23861000B12BBD48D09E6CCF43E729BA /* Pods-Contacts.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Contacts/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Contacts/Pods-Contacts.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Contacts;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F600428C0756F7EE7B710FBC9F0060C /* Build configuration list for PBXNativeTarget "Pods-Contacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEFB2BA4AB9BA9EA3215EFB7D68856F8 /* Debug */,
+				E6FC3107551CD0DD4C1A49A96479B8B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EB645C612834738B99727720210C23E /* Debug */,
+				E39CD1E764776175CB82EEC82A6C9948 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E4CF8DDBDBEB686DAA45258682EF382 /* Build configuration list for PBXNativeTarget "SwiftValidator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C022868938A68A24B7F83575C8E7BCE3 /* Debug */,
+				735D3903AFAADFE47947AC409F23DD55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
