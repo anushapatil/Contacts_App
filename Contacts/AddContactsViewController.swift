@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import SwiftValidator
+
 
 protocol AddContactsViewControllerDelegate
 {
     func reloadTableAfterAddingContacts()
 }
 
-class AddContactsViewController: UIViewController
+class AddContactsViewController: UIViewController, ProfileViewControllerDelegate
 {
     // MARK: Outlet deaclaration
     
+    @IBOutlet weak var profilePicButton: UIButton!
     @IBOutlet weak var namePrefixTextfield: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var middleNameTextField: UITextField!
@@ -38,6 +41,8 @@ class AddContactsViewController: UIViewController
     @IBOutlet weak var specialDatesSideButton: UIButton!
     
     var delegate: AddContactsViewControllerDelegate!
+    var profileViewController: ProfileViewController!
+    var validator = Validator()
     
     override func viewDidLoad()
     {
@@ -48,7 +53,7 @@ class AddContactsViewController: UIViewController
     
     @IBAction func didClickOnProfilePicSelectionButton(sender: AnyObject)
     {
-        
+       
     }
     
     @IBAction func specialDatesSideButtonClicked(sender: AnyObject)
@@ -101,6 +106,17 @@ class AddContactsViewController: UIViewController
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
+    {
+        profileViewController = segue.destinationViewController as! ProfileViewController;
+        profileViewController.delegate = self;
+    }
+    
+    func updatedProfilePic(image: UIImage)
+    {
+        profilePicButton.setImage(image, forState: .Normal);
+    }
+    
     //MARK: Custom methods
     
     func prepareContactsModel() -> (AddContactsModel)
@@ -110,7 +126,7 @@ class AddContactsViewController: UIViewController
         addContactsModel.firstName = self.firstNameTextField.text;
         addContactsModel.middleName = self.middleNameTextField.text;
         addContactsModel.surname = self.surnameTextField.text;
-        addContactsModel.namePrefix = self.nameSuffixTextField.text;
+        addContactsModel.nameSuffix = self.nameSuffixTextField.text;
         addContactsModel.company = self.companyTextField.text;
         addContactsModel.title = self.titleTextField.text;
         addContactsModel.phone = self.phoneTextField.text;
@@ -137,12 +153,10 @@ class AddContactsViewController: UIViewController
         
         if textField == emailTextField
         {
-            value = isValidEmail(textField.text!);
+            //validating email from pod file project
+            validator.registerField(emailTextField, errorLabel: nil, rules: [RequiredRule(), EmailRule(message: "Invalid email")])
+            
         }
-//        else if textField == phoneTextField
-//        {
-//            value = validate(textField.text!)
-//        }
         
         if !value && textField.text != ""
         {
@@ -166,19 +180,5 @@ class AddContactsViewController: UIViewController
     
     //MARK: Validate Phone number and Email ID
     
-    func isValidEmail(testStr:String) -> Bool
-    {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        let result = emailTest.evaluateWithObject(testStr)
-        return result
-    }
     
-    func validate(value: String) -> Bool
-    {
-        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
-        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-        let result =  phoneTest.evaluateWithObject(value)
-        return result
-    }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomSubView" customModule="Contacts" customModuleProvider="target"/>
@@ -102,6 +102,9 @@
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hhJ-ie-bvy">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="0.0" y="69" width="340" height="612"/>
+                            </variation>
                             <connections>
                                 <outlet property="dataSource" destination="Bvc-O0-HCW" id="xTh-HP-MtC"/>
                                 <outlet property="delegate" destination="Bvc-O0-HCW" id="Yh5-wP-LHw"/>
@@ -195,7 +198,8 @@
                             <exclude reference="wPf-Vz-Y7f"/>
                         </mask>
                     </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="30" y="0.0" width="340" height="726"/>
                         <mask key="subviews">
                             <include reference="Wqk-Z2-kTu"/>
                             <include reference="RlV-qQ-MeD"/>
@@ -363,6 +367,9 @@
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNM-rS-6EC">
                             <rect key="frame" x="55" y="259" width="340" height="591"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="0.0" y="114" width="340" height="612"/>
+                            </variation>
                             <connections>
                                 <outlet property="dataSource" destination="Bvc-O0-HCW" id="1sT-1P-nl8"/>
                                 <outlet property="delegate" destination="Bvc-O0-HCW" id="VZi-CO-2uf"/>
@@ -435,7 +442,8 @@
                             <exclude reference="oAd-cN-DCG"/>
                         </mask>
                     </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="430" y="0.0" width="340" height="726"/>
                         <mask key="subviews">
                             <include reference="ekw-11-tIB"/>
                             <include reference="A32-eS-Ubu"/>
@@ -663,7 +671,8 @@
                                     <exclude reference="tJf-Fb-gJy"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=compact">
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="0.0" y="314" width="340" height="1"/>
                                 <mask key="constraints">
                                     <include reference="rtH-Vb-LLW"/>
                                     <include reference="tJf-Fb-gJy"/>
@@ -687,7 +696,8 @@
                                     <exclude reference="krc-BR-4M7"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=compact">
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="0.0" y="283" width="197" height="20"/>
                                 <mask key="constraints">
                                     <include reference="P2l-tp-zML"/>
                                     <include reference="krc-BR-4M7"/>
@@ -806,7 +816,8 @@
                             <exclude reference="Rd9-3f-wcV"/>
                         </mask>
                     </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="830" y="0.0" width="340" height="726"/>
                         <mask key="subviews">
                             <include reference="J4Q-jz-hYn"/>
                             <include reference="cYx-PG-s7w"/>

@@ -8,8 +8,7 @@
 
 import UIKit
 
-
-class ViewController: UIViewController, AddContactsViewControllerDelegate, CustomSubViewDelegate, UIScrollViewDelegate
+class ViewController: UIViewController, AddContactsViewControllerDelegate, CustomSubViewDelegate,UIScrollViewDelegate, DisplayViewControllerDelegate
 {
     @IBOutlet weak var phoneKeyPadButton: UIButton!
     @IBOutlet weak var groupContactsButton: UIButton!
@@ -180,11 +179,13 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     
     func addDisplayViewController()
     {
+        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("display")
         
         self.presentViewController(vc, animated: true) { () -> Void in
             
             let displayViewController = vc as! DisplayViewController
+            displayViewController.delegate = self;
             displayViewController.view.backgroundColor = UIColor.whiteColor()
             
             let selectedContact = self.customSubView.getSelectedContact()
@@ -197,6 +198,8 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
             displayViewController.titleDisplay.text = selectedContact.title;
             displayViewController.phoneNumberDisplay.text = selectedContact.phone;
             displayViewController.emailIDDisplay.text = selectedContact.email;
+            displayViewController.addressDisplay.text = selectedContact.address;
+            displayViewController.firstNameString = selectedContact.firstName!;
         }
     }
     
@@ -220,8 +223,21 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
     {
         fetchStoredContactsDetails();
         formAlphabeticCharacters();
+        customSubView.storedContactsArray = storedContacts;
         
         customSubView.reloadTableData();
+    }
+    
+    func showAlert()
+    {
+        let alertController = UIAlertController(title: "Error", message: "No filtered data available!!!", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Ok", style: .Default, handler: { (ACTION) -> Void in
+            
+        });
+        
+        alertController.addAction(okAction);
+        self.presentViewController(alertController, animated: true, completion: { () -> Void in
+        });
     }
     
     //MARK ScrollView Delegate methods

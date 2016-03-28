@@ -93,6 +93,80 @@ class DataBaseHandler: NSObject
         }
     }
     
+    //MARK: Update database
+    
+    func updateData(firstname: String, updatedData:AddContactsModel)
+    {
+        let fetchRequest = NSFetchRequest();
+        let entityDescription = NSEntityDescription.entityForName("Contacts", inManagedObjectContext: self.managedObjectContext);
+        
+        let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true, selector: "localizedStandardCompare:")
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let predicate = NSPredicate(format: "firstName=%@", firstname)
+        fetchRequest.returnsObjectsAsFaults = false;
+        fetchRequest.entity = entityDescription;
+        fetchRequest.predicate = predicate;
+        do
+        {
+            let result = try self.managedObjectContext.executeFetchRequest(fetchRequest);
+            if result.count != 0
+            {
+                let managedObject = result[0]
+                managedObject.setValue(updatedData.namePrefix, forKey: "namePrefix")
+                managedObject.setValue(updatedData.firstName, forKey: "firstName")
+                managedObject.setValue(updatedData.middleName, forKey: "middleName")
+                managedObject.setValue(updatedData.surname, forKey: "surname")
+                managedObject.setValue(updatedData.nameSuffix, forKey: "nameSuffix")
+                managedObject.setValue(updatedData.company, forKey: "company")
+                managedObject.setValue(updatedData.title, forKey: "title")
+                managedObject.setValue(updatedData.phone, forKey: "phone")
+                managedObject.setValue(updatedData.email, forKey: "email")
+                managedObject.setValue(updatedData.address, forKey: "address")
+                
+                saveContext();
+            }
+        }
+        catch
+        {
+            let updateError = error as NSError
+            print(updateError);
+        }
+    }
+    
+    //MARK: Delete coredata support
+    
+    func deleteDataBaseRecord(firstname: String)
+    {
+        
+        let fetchRequest = NSFetchRequest();
+        let entityDescription = NSEntityDescription.entityForName("Contacts", inManagedObjectContext: self.managedObjectContext);
+        
+        let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true, selector: "localizedStandardCompare:")
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let predicate = NSPredicate(format: "firstName=%@", firstname)
+        fetchRequest.returnsObjectsAsFaults = false;
+        fetchRequest.entity = entityDescription;
+        fetchRequest.predicate = predicate;
+        do
+        {
+            let result = try self.managedObjectContext.executeFetchRequest(fetchRequest);
+            if result.count != 0
+            {
+                let contact = result[0] as! Contacts
+                managedObjectContext.deleteObject(contact)
+                
+                saveContext();
+            }
+        }
+        catch
+        {
+            let deleteError = error as NSError
+            print(deleteError);
+        }
+    }
+    
     //MARK: Core data fetch data support
     
     func fetchData ()

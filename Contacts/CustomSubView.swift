@@ -11,6 +11,7 @@ import UIKit
 protocol CustomSubViewDelegate
 {
     func addDisplayViewController();
+    func showAlert();
 }
 
 class CustomSubView: UIView,UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate
@@ -38,9 +39,12 @@ class CustomSubView: UIView,UITableViewDelegate,UITableViewDataSource, UISearchB
     var displayingContacts:NSMutableArray = NSMutableArray();
     var alphabeticSortingDict:NSMutableDictionary?
     var alphabeticArray:NSMutableArray?
+    var filterdAlphabeticSortingDict:NSMutableDictionary = NSMutableDictionary()
+    var filteredAlphabeticArray:NSMutableArray = NSMutableArray()
+    var filteredDisplayingContacts:NSMutableArray = NSMutableArray();
     var storedContactsArray:NSMutableArray?
     var selectedContact:Contacts?
-    var filteredArray:NSMutableArray = NSMutableArray()
+    var filteredArray = []
     
     override init(frame: CGRect)
     {
@@ -78,6 +82,7 @@ class CustomSubView: UIView,UITableViewDelegate,UITableViewDataSource, UISearchB
     func reloadTableData()
     {
         self.contactsTableView.reloadData();
+        self.allCallsTableView.reloadData();
     }
     
     func getSelectedContact()->Contacts
@@ -91,11 +96,19 @@ class CustomSubView: UIView,UITableViewDelegate,UITableViewDataSource, UISearchB
     {
         if tableView == self.contactsTableView
         {
+            if filterdAlphabeticSortingDict.count != 0
+            {
+                return filterdAlphabeticSortingDict.count;
+            }
             return alphabeticSortingDict!.count+1;
         }
         else if tableView == self.allCallsTableView
         {
-            return 1;
+            if storedContactsArray?.count != 0
+            {
+                return 1;
+            }
+            return 0;
         }
         return 0;
     }
@@ -104,6 +117,14 @@ class CustomSubView: UIView,UITableViewDelegate,UITableViewDataSource, UISearchB
     {
         if tableView == self.contactsTableView
         {
+            if filterdAlphabeticSortingDict.count != 0
+            {
+                let string = filteredAlphabeticArray.objectAtIndex(section);
+                //Get the section elements
+                filteredDisplayingContacts = filterdAlphabeticSortingDict.valueForKey(string as! String) as! NSMutableArray
+                return filteredDisplayingContacts.count;
+            }
+            
             if section == 0
             {
                 return 1;
@@ -127,22 +148,33 @@ class CustomSubView: UIView,UITableViewDelegate,UITableViewDataSource, UISearchB
         if tableView == self.contactsTableView
         {
             let contactsCell = self.contactsTableView!.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ContactsCell
-            if indexPath.row == 0 && indexPath.section == 0
+            
+            if filterdAlphabeticSortingDict.count != 0
             {
-                contactsCell.contactsNameLabel.text = "SET UP MY PROFILE"
-                contactsCell.contactsImageView.image = UIImage (named: "person.png");
+                let string = filteredAlphabeticArray.objectAtIndex(indexPath.section);
                 
-                return contactsCell;
+                //Get the section elements
+                filteredDisplayingContacts = filterdAlphabeticSortingDict.valueForKey(string as! String) as! NSMutableArray
+                let contacts =  filteredDisplayingContacts[indexPath.row] as! Contacts;
+                contactsCell.contactsNameLabel.text = contacts.firstName;
             }
-            
-            let string = alphabeticArray!.objectAtIndex(indexPath.section-1);
-            
-            //Get the section elements
-            displayingContacts = alphabeticSortingDict!.valueForKey(string as! String) as! NSMutableArray
-            let contacts =  displayingContacts[indexPath.row] as! Contacts;
-            contactsCell.contactsNameLabel.text = contacts.firstName;
+            else
+            {
+                if indexPath.row == 0 && indexPath.section == 0
+                {
+                    contactsCell.contactsNameLabel.text = "SET UP MY PROFILE"
+                }
+                else
+                {
+                    let string = alphabeticArray!.objectAtIndex(indexPath.section-1);
+                    
+                    //Get the section elements
+                    displayingContacts = alphabeticSortingDict!.valueForKey(string as! String) as! NSMutableArray
+                    let contacts =  displayingContacts[indexPath.row] as! Contacts;
+                    contactsCell.contactsNameLabel.text = contacts.firstName;
+                }
+            }
             contactsCell.contactsImageView.image = UIImage (named: "person.png");
-            
             cell = contactsCell;
         }
         else if tableView == self.allCallsTableView
@@ -167,20 +199,30 @@ class CustomSubView: UIView,UITableViewDelegate,UITableViewDataSource, UISearchB
     {
         if tableView == self.contactsTableView
         {
-            let v = UIView();
-            let label = UILabel();
             var text = "";
-            
-            if section == 0
+            if filterdAlphabeticSortingDict.count != 0
             {
-                text = "ME";
-            }
-            else
-            {
-                let string:String = alphabeticArray!.objectAtIndex(section-1) as! String;
+                let string = filteredAlphabeticArray.objectAtIndex(section) as! String;
                 let stringArray = string.componentsSeparatedByString("\"");
                 text = stringArray[1].uppercaseString;
             }
+            else
+            {
+                if section == 0
+                {
+                    text = "ME";
+                }
+                else
+                {
+                    let string = alphabeticArray!.objectAtIndex(section-1) as! String;
+                    let stringArray = string.componentsSeparatedByString("\"");
+                    text = stringArray[1].uppercaseString;
+                }
+            }
+            
+            
+            let v = UIView();
+            let label = UILabel();
             
             label.text = text;
             let size = label.font.sizeOfString(text, containedWidth: 20.0);
@@ -235,15 +277,67 @@ class CustomSubView: UIView,UITableViewDelegate,UITableViewDataSource, UISearchB
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
-        let filter = storedContactsArray?.filter({ (contacts) -> Bool in
-        let tmp: NSString = contacts.firstName as! NSString
-        let range = tmp.rangeOfString(searchBar.text!, options: NSStringCompareOptions.CaseInsensitiveSearch)
-        return range.location != NSNotFound
-        })
-        
-        if filter?.count != 0
+        searchingStoredContacts(searchBar.text!)
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        if searchText == ""
         {
-//            filteredArray = filter
+            filterdAlphabeticSortingDict.removeAllObjects();
+            filteredAlphabeticArray.removeAllObjects();
+            filteredDisplayingContacts.removeAllObjects();
+            
+            reloadTableData()
         }
     }
+    
+
+    func searchingStoredContacts(searchText: String)
+    {
+        filteredArray = storedContactsArray!.filter({ (contacts) -> Bool in
+            let tmp: NSString = contacts.firstName as! NSString
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        
+        if filteredArray.count == 0
+        {
+            self.delegate.showAlert();
+        }
+        else
+        {
+            //Forming section header charecters
+            formAlphabeticCharacters();
+            reloadTableData();
+        }
+    }
+    
+    func formAlphabeticCharacters()
+    {
+        filterdAlphabeticSortingDict.removeAllObjects();
+        filteredAlphabeticArray.removeAllObjects();
+        
+        for value in filteredArray
+        {
+            let innerArray:NSMutableArray = NSMutableArray();
+            let contacts = value as! Contacts;
+            let char = contacts.firstName?.characters.first;
+            let array = filterdAlphabeticSortingDict.valueForKey(String(char));
+            
+            if array?.count != 0 && array != nil
+            {
+                innerArray.addObjectsFromArray(array as! [AnyObject]);
+            }
+            else
+            {
+                filteredAlphabeticArray.addObject(String(char));
+            }
+            innerArray.addObject(value);
+            filterdAlphabeticSortingDict.setValue(innerArray, forKey: String(char));
+        }
+    }
+    
+    //MARK: Image picker view
+    
 }
