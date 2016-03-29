@@ -203,8 +203,8 @@ class ViewController: UIViewController, AddContactsViewControllerDelegate, Custo
             
             //Get image from directory and set
             let dataBaseHandler = DataBaseHandler.sharedInstance;
-            let imageFolderPath = dataBaseHandler.applicationDocumentsDirectory.URLByAppendingPathComponent(String(format: "%@.jpeg",selectedContact.firstName!))
-            displayViewController.profilePicImage.image = UIImage(contentsOfFile: imageFolderPath.absoluteString)
+            let imageFolderPath = dataBaseHandler.applicationDocumentDirectory.stringByAppendingPathComponent(String(format: "%@.jpeg",selectedContact.firstName!))
+            displayViewController.profilePicImage.image = UIImage(contentsOfFile: imageFolderPath)
         }
     }
     

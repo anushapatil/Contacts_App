@@ -29,6 +29,14 @@ class DataBaseHandler: NSObject
     
     // MARK: - Core Data stack
     
+    lazy var applicationDocumentDirectory: NSString = {
+        let nsDocumentDirectory = NSSearchPathDirectory.DocumentDirectory
+        let nsUserDomainMask    = NSSearchPathDomainMask.UserDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        
+        return paths[0] as NSString
+    }()
+    
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
