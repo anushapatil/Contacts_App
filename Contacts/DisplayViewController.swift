@@ -40,6 +40,11 @@ class DisplayViewController: UIViewController {
     override func viewWillAppear(animated: Bool)
     {
         super.viewDidAppear(animated);
+        profilePicImage.layer.cornerRadius = profilePicImage.frame.size.height/2
+        profilePicImage.layer.borderWidth = 1
+        profilePicImage.layer.masksToBounds = false
+        profilePicImage.layer.borderColor = UIColor.whiteColor().CGColor
+        profilePicImage.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
